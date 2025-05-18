@@ -17,6 +17,9 @@ function renderTable(data) {
     const verbiageHTML = item["Verbiage"].replace(
       /([\[\(\{])([^{}\[\]\(\)]+?)([\]\)\}])/g,
       (match, open, content, close) => {
+        if (open === "(" && content === "s" && close === ")") {
+          return match;
+        }
         return `<span contenteditable="true" class="editable-bracket">${open}${content}${close}</span>`;
       }
     );
