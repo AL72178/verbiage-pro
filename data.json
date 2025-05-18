@@ -1,0 +1,632 @@
+[
+  {
+    "Coded By":"PDR",
+    "Primary Category":"LPP",
+    "Secondary Category":"Auth\/LPP\/PAM",
+    "Scenario":"Extenuating Circumstances",
+    "Short Summary":"Authorization extenuating circumstances not approved",
+    "Decision Code":"AECNA",
+    "Verbiage":"The extenuating circumstances submitted with the rationale the preauthorization was not requested according to your provider contract was not approved."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"LPP",
+    "Secondary Category":"Auth\/LPP\/PAM",
+    "Scenario":"Extenuating Circumstances",
+    "Short Summary":"Authorization extenuating circumstances not received ",
+    "Decision Code":"AECNR",
+    "Verbiage":"An extenuating circumstance with the rationale the preauthorization was not requested according to your provider contract was not received.\u00a0 In order for us to make a determination on the dispute, submit the extenuating circumstance along with the medical records."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"PAM",
+    "Secondary Category":"Auth\/LPP\/PAM",
+    "Scenario":"PAM",
+    "Short Summary":"Claim contains denial of send medical records to Carelon and the medical records are received",
+    "Decision Code":"AIM",
+    "Verbiage":"Create an CarelonMBM Order request through https:\/\/www.providerportal.com. The claim ID, clinical details and date of service are required. You only need to upload documentation when needed to complete the review."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Authorization",
+    "Secondary Category":"Auth\/LPP\/PAM",
+    "Scenario":"Denial for NMN",
+    "Short Summary":"Appeal Letter for Claim",
+    "Decision Code":"APLCLM",
+    "Verbiage":"Please be advised that no payment was made to the claim as date of service from [fromDate] to [toDate] were denied as investigational WMDS Case No: [UMxxxxxx]. If you disagree with this decision, please submit a written provider appeal to include the extenuating circumstances and supporting medical records for an appeal review."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"LPP",
+    "Secondary Category":"Auth\/LPP\/PAM",
+    "Scenario":"Authorization",
+    "Short Summary":"Authorization does not match the claim",
+    "Decision Code":"ANMC",
+    "Verbiage":"The authorization does not match the date of service or the service(s) billed on the claim.\u00a0 In order for us to make a determination on the dispute, we need the medical records from you.\u00a0\u00a0\u00a0 "
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Authorization",
+    "Secondary Category":"Auth\/LPP\/PAM",
+    "Scenario":"Denial for NMN",
+    "Short Summary":"Appeal Letter for specific CPT",
+    "Decision Code":"APLCPT",
+    "Verbiage":"Please be advised that the procedure code [procedure code] has been denied correctly as per the authorization (UMxxxxxx), due to not medically necessity. To request a clinical review for this denial, please submit an appeal letter along with the relevant medical records for further review of this matter."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Authorization",
+    "Secondary Category":"Auth\/LPP\/PAM",
+    "Scenario":null,
+    "Short Summary":"Less Unit approved",
+    "Decision Code":"AULES",
+    "Verbiage":"Please be advised that the service (CPT code) billed in the claim was processed according to the doses approved in the authorization. The authorization\u00a0(UMxxxxxx) approved [approved no. of Unit] unit of dose. Upon reviewing the claim, the service was billed for [billed no. of Unit] unit of dose. Therefore, the claim was adjusted as per approved units of doses in the the authorization and priced in accordance with the provider's contract."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Authorization",
+    "Secondary Category":"Auth\/LPP\/PAM",
+    "Scenario":null,
+    "Short Summary":"Approved unit already met",
+    "Decision Code":"AUNMET",
+    "Verbiage":"An extenuating circumstance with the rationale the preauthorization was not requested according to your provider contract was not received.  In order for us to make a determination on the dispute, submit the extenuating circumstance along with the medical records. The authorization (UMxxxxxx) received does not have remaining approved unit to render the service. No additional Authorization received on file. "
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Authorization",
+    "Secondary Category":"Auth\/LPP\/PAM",
+    "Scenario":"Site of Care Mismatch",
+    "Short Summary":"Different POS billed in Claim then the approved authorization.",
+    "Decision Code":"AUPOS",
+    "Verbiage":"We have reviewed the information submitted, and the denial is upheld. The information submitted has been carefully evaluated and we have determined that the claim was processed correctly. Upon further inspection, it was found that the authorization (UMxxxxxx) received in claim is approved for POS [POS No.] and the claim is billed under POS [POS No.]. Therefore the claim denied correctly for site of care mismatch. Please submit valid authorization for outpatient place of treatment."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"D25",
+    "Secondary Category":"Other",
+    "Scenario":null,
+    "Short Summary":"D25 Policy 1",
+    "Decision Code":"D25P1",
+    "Verbiage":"In accordance with the Health Plan\u2019s Bundled Services and Supplies Reimbursement Policy,\u00a0certain services and supplies, such as\u00a0[code],\u00a0are considered to be ineligible for separate reimbursement when reported by a professional provider. These services and\/or supplies may not be reported with a primary service or as a standalone service."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Pricing",
+    "Secondary Category":"Pricing",
+    "Scenario":"Beacon Healthcare",
+    "Short Summary":"UniCare member contract claim and the Beacon Healthcare processing is correct",
+    "Decision Code":"BHC",
+    "Verbiage":"We have determined that the charges for the services rendered have been processed correctly according to Beacon Healthcare contracted pricing.  "
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"D25",
+    "Secondary Category":"Other",
+    "Scenario":null,
+    "Short Summary":"D25 Policy 2",
+    "Decision Code":"D25P2",
+    "Verbiage":"In accordance with the Health Plan\u2019s Bundled Services and Supplies Reimbursement Policy,\u00a0[policy number]\u00a0is not eligible for separate reimbursement when reported with\u00a0[procedure code]\u00a0by a professional provider. In most cases, modifiers will not override the denial when reported with a specified service or supply."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Corrected\/Duplicate",
+    "Secondary Category":"Corrected\/Duplicate",
+    "Scenario":"Corrected Claim",
+    "Short Summary":"Claim not submitted as corrected claim",
+    "Decision Code":"CNC",
+    "Verbiage":"The claim in question was not submitted as a corrected claim.  Re-submit the claim as a corrected claim according to the provider manual guidelines."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"D25",
+    "Secondary Category":"Other",
+    "Scenario":null,
+    "Short Summary":"D25 Policy 3",
+    "Decision Code":"D25P3",
+    "Verbiage":"In accordance with the Health Plan\u2019s Bundled Services and Supplies Reimbursement Policy, [procedure code]\u00a0is not eligible for separate reimbursement when performed with any other procedure, service or supply. Modifiers 59, XE, XP, XS or XU will not override the denial for the services when they are reported with any other procedure, service or supply."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Timey Filing",
+    "Secondary Category":"Timey Filing",
+    "Scenario":"Corrected Claim Timely Filing",
+    "Short Summary":"Claim timely filing corrected claim not submitted timely",
+    "Decision Code":"CTFCC",
+    "Verbiage":"We have determined that the corrected claim has been denied correctly for timely filing.  The corrected claim was received on (receive date) and the timely filing limit is (timely filing limit).  If you have evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Timey Filing",
+    "Secondary Category":"Timey Filing",
+    "Scenario":"Timely Filing, Insufficient POTF",
+    "Short Summary":"Claim is denied for timely filing and insufficient information submitted to waive timely filing.",
+    "Decision Code":"CTFI",
+    "Verbiage":"The documentation received is not sufficient to waive timely filing.  If you have additional evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Timey Filing",
+    "Secondary Category":"Timey Filing",
+    "Scenario":"No POTF Received. Non Par",
+    "Short Summary":"Claim timely filing nonparticipating provider",
+    "Decision Code":"CTFN",
+    "Verbiage":"We have determined that the charges for the services rendered have been denied correctly for timely filing according to the member's contract.  The timely filing limit is (member contract timely filing limit) and your claim was received (receive date).  If you have evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Timey Filing",
+    "Secondary Category":"Timey Filing",
+    "Scenario":"Timely Filing POTF not considereable",
+    "Short Summary":"POTF send by the provider is not consider valid, Claim remain denied. Upheld",
+    "Decision Code":"CTFNA",
+    "Verbiage":"We have determined that the request to waive timely filing is upheld.  The supporting documentation received does not demonstrate that the claim was filed timely.  If you have additional evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Timey Filing",
+    "Secondary Category":"Timey Filing",
+    "Scenario":"No POTF Received. Par",
+    "Short Summary":"Claim timely filing participating provider",
+    "Decision Code":"CTFP",
+    "Verbiage":"We have determined that the charges for the services rendered have been denied correctly for timely filing according to your contract.  The timely filing limit is (provider timely filing limit) and your claim was received (receive date).  If you have evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"COB",
+    "Secondary Category":"Other",
+    "Scenario":"Requesting Primary EOB for Recoupment",
+    "Short Summary":"No EOB Received, Claim processed primary incorrectly.",
+    "Decision Code":"RQCBPR",
+    "Verbiage":"We have reviewed the submitted information , which has been carefully evaluated. We have determined that, in order to process the claim for possible overpayment recoupment, additional documentation and updated primary payor's EOB are required. The documentation received does not contain complete information to proceed further. Kindly submit the updated EOB along with necessary supporting documentation. "
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Corrected\/Duplicate",
+    "Secondary Category":"Corrected\/Duplicate",
+    "Scenario":"Corrected Claim",
+    "Short Summary":"Claim adjusted as per corrected claim.",
+    "Decision Code":"CCADJ",
+    "Verbiage":"The claim in question was denied correctly as a corrected claim. The original claim (OriginalDCN) already been adjusted and paid based on the corrected claim Check date [Date] and Check No. [cheque no]. No adjustment is required. Hence, upholding the case."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Corrected\/Duplicate",
+    "Secondary Category":"Corrected\/Duplicate",
+    "Scenario":"Corrected Claim",
+    "Short Summary":"Requesting Corrected Claim",
+    "Decision Code":"RECC",
+    "Verbiage":"Please be advised that in order to adjust the claim as per the requested information, we require corrected claim from you. Kindly, Re-submit the claim as a corrected claim according to the provider manual guidelines."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Pricing",
+    "Secondary Category":"Pricing",
+    "Scenario":"Claim already priced",
+    "Short Summary":"Duplicate dispute claim adjusted",
+    "Decision Code":"DDA",
+    "Verbiage":"Our records indicate that a payment of $(payment amount) was issued to your office on (check date) check number (check number)."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Corrected\/Duplicate",
+    "Secondary Category":"Corrected\/Duplicate",
+    "Scenario":"Duplicate Claim ",
+    "Short Summary":"Duplicate denial claim correct",
+    "Decision Code":"DDC",
+    "Verbiage":"The claim in question was denied correctly as a duplicate of claim (duplicate claim number)."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Inquiry",
+    "Secondary Category":"/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"Duplicate Inquiry",
+    "Short Summary":"Duplicate Dispute, No In Progress IQT",
+    "Decision Code":"DDN",
+    "Verbiage":"Our records indicate that a letter was sent to you dated (date of letter) with a decision on your dispute."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Inquiry",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"Duplicate dispute in process",
+    "Short Summary":"Duplicate Dispute, In Progress IQT",
+    "Decision Code":"DDO",
+    "Verbiage":"This provider dispute is a duplicate of a previous dispute received.  The duplicate dispute is in review and a resolution will be provided."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Corrected\/Duplicate",
+    "Secondary Category":"Corrected\/Duplicate",
+    "Scenario":"Corrected Claim",
+    "Short Summary":"Requesting Void Claim",
+    "Decision Code":"REVOID",
+    "Verbiage":"Please be advised that in order to recoup the payment of [$amount] from the claim, we require void claim to further process this claim for recoupment. Kindly  Re-submit the claim as a void claim according to the provider manual guidelines."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Corrected\/Duplicate",
+    "Secondary Category":"Corrected\/Duplicate",
+    "Scenario":"Corrected Claim",
+    "Short Summary":"Asking to request separate inquiry. As the original IQT is OUT of Scope Inquiry",
+    "Decision Code":"RQOSCC",
+    "Verbiage":"The claim in question was denied correctly as a corrected claim. The original claim (DCN) already been adjusted based on the corrected claim. Please note, in order to review the denial in original claim, we kindly request you to submit the separate dispute along with complete clinical records and supporting documentation to review the case further."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Corrected\/Duplicate",
+    "Secondary Category":"Corrected\/Duplicate",
+    "Scenario":"Duplicate Claim ",
+    "Short Summary":"Asking to request separate inquiry. As the original IQT is OUT of Scope Inquiry",
+    "Decision Code":"RQOSDP",
+    "Verbiage":"The claim in question was denied correctly as a duplicate of claim (DCN). In order to review the denial made in original claim. We are requesting you to kindly resubmit the dispute along with supporting documentation to review the case further."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Inquiry",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"Inquiry submission rights exhasuted",
+    "Short Summary":"Dispute rights exhausted",
+    "Decision Code":"DRE",
+    "Verbiage":"Our records indicate the final dispute decision on this matter was sent to you exhausting your dispute rights.  As you have exhausted your dispute rights, this matter is not eligible for further internal review."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Inquiry",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"Inquiry Submission Days Limit is exhausted. (For Central and East States) 2nd Level Appeal",
+    "Short Summary":"Dispute timely filing submission exhausted and documentation is not received from the provider.  This only applies to the Appeal level for the Central and East provider market.",
+    "Decision Code":"DTFC",
+    "Verbiage":"The time limit for submitting a Claim Payment Appeal has expired. Participating providers should reference the timeframe stated in the provider manual or in your provider agreement. Your Claim Payment Appeal request was received after the required deadline. We regret to inform you that your Claim Payment Appeal request is denied. \n\nIf you believe you have extenuating circumstances that impacted the timely submission of your Claim Payment Appeal, you can resubmit a Claim Payment Appeal with proper documentation through the Disputes function in Availity Essentials, or in writing via postal mail to the address in the Provider Manual. "
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Inquiry",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"Inquiry Submission Days Limit is exhausted (For other state)",
+    "Short Summary":"Dispute timely filing submission exhausted and an extenuating circumstance was not approved",
+    "Decision Code":"DTFE",
+    "Verbiage":"The time limit for submitting a provider dispute has expired. Unfortunately, the submission does not meet the approved criteria to be considered for extenuating circumstances.  We regret to inform you that the request is denied. "
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Inquiry",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"Inquiry Submission Days Limit is exhausted. (For West provider and UniCare GIC)",
+    "Short Summary":"Dispute timely filing West provider and UniCare GIC",
+    "Decision Code":"DTFNW",
+    "Verbiage":"The time limit for submitting a provider dispute has expired.  The dispute must be submitted within (market timely filing) of the date of the explanation of payment.  Your dispute request was received after the deadline.  We regret to inform you that the request is denied."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Inquiry",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"Inquiry Submission Days Limit is exhausted. (For Central and East States) 1st Level Appeal",
+    "Short Summary":"Dispute timely filing submission exhausted and documentation is not received from the provider.  This only applies to the Reconsideration level for the Central and East provider market.",
+    "Decision Code":"DTFR",
+    "Verbiage":"The time limit for submitting a Claim Payment Reconsideration has expired. Participating providers should reference the timeframe stated in the provider manual or in your provider agreement.  Your Claim Payment Reconsideration request was received after the deadline and the request is denied. \n\nIf you believe you have extenuating circumstances that impacted the timely submission of your Claim Payment Reconsideration, you can resubmit a Claim Payment Reconsideration with proper documentation through the Disputes function in Availity Essentials, or in writing via postal mail to the address in the Provider Manual. "
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Eligibility",
+    "Secondary Category":"Other",
+    "Scenario":"Service performed after the effective date.",
+    "Short Summary":"Eligibility date of service after contract cancelled date",
+    "Decision Code":"ECCD",
+    "Verbiage":"Our records indicate the services occurred after the member\u2019s termination date of (term date).  Please contact the member to verify their insurance information.  If the member feels that this is incorrect they may contact member services. "
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Eligibility",
+    "Secondary Category":"Other",
+    "Scenario":"Service performed before the effective date.",
+    "Short Summary":"Eligibility date of service before contract effective date",
+    "Decision Code":"ECED",
+    "Verbiage":"Our records indicate the services occurred prior to the member\u2019s effective date of (eff date).  Please contact the member to verify their insurance information.  If the member feels that this is incorrect they may contact member services. "
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"HCM",
+    "Secondary Category":"Requesting Additional",
+    "Scenario":"Requesting Medical records",
+    "Short Summary":"Decision for Miscoding",
+    "Decision Code":"DLMIS",
+    "Verbiage":"Please be informed that upon thorough examination, the medical records provided do not sufficiently support the billed details on the claim. Therefore, the claim will remain denied for invalid\/miscoding procedure code billed. The denial remains in line with our established guidelines.  If you possess additional information or medical records, feel free to submit them for further reconsideration."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Medical Records",
+    "Secondary Category":"Requesting Additional",
+    "Scenario":"Additional Information Requried\/Medical records",
+    "Short Summary":"Medical records needed",
+    "Decision Code":"MRN",
+    "Verbiage":"In order for us to make a determination on the dispute, we need the medical records from you.  "
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Medical Records",
+    "Secondary Category":"Requesting Additional",
+    "Scenario":"Incorrect\/Invalid Medical record received.",
+    "Short Summary":"Medical records do not match patient\/claim",
+    "Decision Code":"MRNI",
+    "Verbiage":"The medical records received do not match the patient and\/or claim.  In order for us to make a determination on the dispute, we need the medical records from you.  "
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Medical Records",
+    "Secondary Category":"Requesting Additional",
+    "Scenario":"When medical record requested, but not yet received.",
+    "Short Summary":"Medical records requested not received",
+    "Decision Code":"MRNR",
+    "Verbiage":"Our records indicate that a letter was sent to you dated (date of letter) requesting medical records.  We have not received the medical records.  In order for us to make a determination on the dispute, we need the medical records from you.  "
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"HCM",
+    "Secondary Category":"Requesting Additional",
+    "Scenario":"No Review Required for HCM",
+    "Short Summary":"HCM ",
+    "Decision Code":"HCM",
+    "Verbiage":"\"PROCREV MISSINGINACTIVE CRAV, PPR could not identify the provider and\/or procedure(s) billed as being flagged and have authorized Claims Operations to process the claim without PPR review, at normal Plan Benefits.\" and pay the claim"
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"HCM",
+    "Secondary Category":"Requesting Additional",
+    "Scenario":"Requesting Medical records",
+    "Short Summary":"SAME MR Received",
+    "Decision Code":"SMEMR",
+    "Verbiage":"Please be informed that upon thorough examination, the medical records provided do not sufficiently support the billed details on the claim. The decision was already been made basis on the medical records you sent. Therefore, the denial remains in line with our established guidelines. If you possess additional information or medical records, feel free to submit them for further reconsideration."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Inquiry",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"Incorrect DCN Tagged",
+    "Short Summary":"Different Clam, Different Dispute",
+    "Decision Code":"DIFDCN",
+    "Verbiage":"The claim in question does not match with the documentation received in the Inquiry. Kindly resubmit the claim along with supporting documentation to review the claim further."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Medical Records",
+    "Secondary Category":"Requesting Additional",
+    "Scenario":"Requesting Medical records",
+    "Short Summary":"Incomplete or No Medical Records",
+    "Decision Code":"REQMR",
+    "Verbiage":"In order for us to make a determination on the dispute, we need the medical records from you. Incomplete or no medical records have been supplied for further review. Please submit the appropriate medical records to review this case further."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Non Covered Service",
+    "Secondary Category":"Non Covered Service",
+    "Scenario":null,
+    "Short Summary":"Non PAR Service Not Covered",
+    "Decision Code":"NOCONP",
+    "Verbiage":"We have determined that the charges for the services rendered have been denied correctly for a non-participating provider under the patient's medical plan. The benefits for the service billed in claim by a non-participating providers under this medical plan are not covered."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Non Covered Service",
+    "Secondary Category":"Non Covered Service",
+    "Scenario":null,
+    "Short Summary":"Non Covered Service",
+    "Decision Code":"NOCOSR",
+    "Verbiage":"We have determined that the charges for the services rendered have been  correctly denied under the patient's medical plan. The service is non-covered according to the member's benefit contract. Surgery services performed in Outpatient Facilities are not covered as per member's contract. "
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Non Covered Service",
+    "Secondary Category":"Non Covered Service",
+    "Scenario":null,
+    "Short Summary":"Facility Not Eligible for Payment",
+    "Decision Code":"NOFACI",
+    "Verbiage":"We have reviewed the information submitted, and the denial is upheld. Upon further inspection, it was found that the claim we denied this charge because the doctor\/facility didn't submit it to the correct plan. Kindly re-submit the claim under correct plan. No further is required."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Non Covered Service",
+    "Secondary Category":"Non Covered Service",
+    "Scenario":null,
+    "Short Summary":"Fee Schedule",
+    "Decision Code":"NOFESC",
+    "Verbiage":"We have reviewed the information submitted, and the denial is upheld. The information submitted has been carefully evaluated and we have determined that the claim was processed correctly. Upon further inspection, it was found that the service(s) on this claim have been denied because the provider billed using a procedure code that is not on the fee schedule."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Non Covered Service",
+    "Secondary Category":"Non Covered Service",
+    "Scenario":null,
+    "Short Summary":"Labcorp",
+    "Decision Code":"NOLABC",
+    "Verbiage":"We have determined that the charges for the services rendered have been\u00a0 correctly denied under the patient's medical plan. We denied this service because the lab work wasn't done by Labcorp, our contracted facility. No further adjustment is required. Therefore upholding the case."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Pricing",
+    "Secondary Category":"Pricing",
+    "Scenario":"Non Par Price Correctly",
+    "Short Summary":"Nonparticipating provider status\/pricing is correct",
+    "Decision Code":"NPC",
+    "Verbiage":"We have determined that the charges for the services rendered have been processed correctly with the non-participating allowance according to your non-participation status."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Out Of Scope Inquiry",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"Inquiry belongs to Correspondence",
+    "Short Summary":"Not a provider dispute correspondence",
+    "Decision Code":"NPDC",
+    "Verbiage":"The claim in question does not qualify as a provider dispute.  The request has been forwarded to our Correspondence department for review."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Out Of Scope Inquiry",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"Inquiry belongs to G&A",
+    "Short Summary":"Not a provider dispute G&A",
+    "Decision Code":"NPDG ",
+    "Verbiage":"The claim in question does not qualify as a provider dispute.  The request has been forwarded to our Grievance and Appeals department for review."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Out Of Scope Inquiry",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"Inquiry belongs to G&A-Host",
+    "Short Summary":"Not a provider dispute G&A (host)",
+    "Decision Code":"NPDH ",
+    "Verbiage":"The claim in question does not qualify as a provider dispute.  The request has been forwarded to the member's home plan for review."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Out Of Scope Inquiry",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"Inquiry related to program intergrity",
+    "Short Summary":"Not a provider dispute G&A program integrity review",
+    "Decision Code":"NPDP",
+    "Verbiage":"The claim in question does not qualify as a provider dispute.\u00a0 The request has been forwarded to our Program Integrity department for review."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Out Of Scope Inquiry",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"Inquiry belongs to Surprise Bill",
+    "Short Summary":"Not a provider dispute surprise bill",
+    "Decision Code":"NPDS",
+    "Verbiage":"The claim in question does not qualify as a provider dispute.  The request has been forwarded for surprise bill review."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Pricing",
+    "Secondary Category":"Pricing",
+    "Scenario":"Non Par Price Correctly other then WP",
+    "Short Summary":"Nonpartipating provider NCN pricing correct",
+    "Decision Code":"NPN ",
+    "Verbiage":"We have determined that the charges for the services rendered have been processed correctly for a non-participating provider under the patient's medical plan.  The benefits for non-participating providers under this medical plan are limited to a rate of reimbursement that is according to the plan's Negotiated Fee Rate for the services billed, not based on Customary and Reasonable rates.  "
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Decisions",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"Overturn",
+    "Short Summary":"Overturn",
+    "Decision Code":"OVT ",
+    "Verbiage":"The initial claim decision has been overturned.  You will receive a new Explanation of Payment and any appropriate payment within two weeks."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Decisions",
+    "Secondary Category":"In-Out-of-Scope\/Decisions\/RM",
+    "Scenario":"Partially Overturn",
+    "Short Summary":"Partially Overturn",
+    "Decision Code":"POVT ",
+    "Verbiage":"The initial claim decision has been partially overturned.  You will receive a new Explanation of Payment and any appropriate payment within two weeks."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Pricing",
+    "Secondary Category":"Pricing",
+    "Scenario":"When PAR claim processed and priced correctly. ",
+    "Short Summary":"Participating provider pricing correct",
+    "Decision Code":"PPC ",
+    "Verbiage":"We have determined that the charges for the services rendered have been processed correctly according to your provider contract."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Non Covered Service",
+    "Secondary Category":"Non Covered Service",
+    "Scenario":"Grouper Denial",
+    "Short Summary":"Part of Another Care",
+    "Decision Code":"NOPANC",
+    "Verbiage":"We have reviewed the information submitted, and the denial is upheld. The information submitted has been carefully evaluated and we have determined that the claim was processed correctly. Upon further inspection, it was found that this service is part of another claim, therefore the services billed in claim are not to paid separately. Please note, that the charge for this service is already including in the primary claim."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Non Covered Service",
+    "Secondary Category":"Non Covered Service",
+    "Scenario":null,
+    "Short Summary":"RANDME",
+    "Decision Code":"NORAN",
+    "Verbiage":"We have determined that the charges for the services rendered have been correctly denied under the patient's medical plan. This claim\/service is not payable under our service area. This claim must be filed to the Payer\/Plan in whose service area the equipment was received."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"PAM",
+    "Secondary Category":"Auth\/LPP\/PAM",
+    "Scenario":"PAM Overturn",
+    "Short Summary":"AIM Overturn",
+    "Decision Code":"AIMOVT",
+    "Verbiage":"The initial claim decision has been overturned.  You will receive a new Explanation of Payment and any appropriate payment within two weeks. Please note that the claim was denied incorrectly for Late Call Penalty. No authorization found on file. To review your request for post authorization, Create an CarelonMBM Order request through https:\/\/www.providerportal.com. The claim ID, clinical details and date of service are required."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Pricing",
+    "Secondary Category":"Pricing",
+    "Scenario":"No Separate Reimbursment for Claim",
+    "Short Summary":"Global Fee",
+    "Decision Code":"NOGLFE",
+    "Verbiage":"We have reviewed the information submitted, and the denial is upheld. Upon further inspection, it was found that the Payment for this service is denied because it is included together with other services for which a global fee has already been paid, and no further payment is due."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Pricing",
+    "Secondary Category":"Pricing",
+    "Scenario":"No Separate Reimbursment for CPT",
+    "Short Summary":"No Separate Reimbursment",
+    "Decision Code":"NOSPREI",
+    "Verbiage":"Please be advised that the service {CPT} billed in claim, will not going to paid separately. Please note, that the charge for this service is already including in the primary procedure billed in the claim. Payment made in claim as per the provider's contract. No additional payment due."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Provider Demographic",
+    "Secondary Category":"Other",
+    "Scenario":null,
+    "Short Summary":"Requesting Demographic Update",
+    "Decision Code":"REPRDR",
+    "Verbiage":"Kindly update your provider's demographic information to review this matter further."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Sweep Adjustment",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"Decisions",
+    "Short Summary":"Sweep",
+    "Decision Code":"DESWEEP",
+    "Verbiage":"The claim was adjusted under Sweep Adjustment . The services rendered have been processed according to your provider contract. You will receive a new Explanation of Payment and any appropriate payment within two weeks."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Recovery",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"When Claim is Overpaid by more than $30.00",
+    "Short Summary":"Refund above threshold",
+    "Decision Code":"RRABV",
+    "Verbiage":"We have reviewed the claim in question and have determined that the claim was paid incorrectly, resulting in an overpayment to you. Our Cost Containment and Overpayment Avoidance (CCOA) Department has been notified of the overpayment and will proceed with the refund process. A refund request will be mailed within 7-10 working days explaining the reason for the overpayment, as well as a breakdown of the overpayment amount."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Recovery",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"When Claim is Overpaid by less than $30.00",
+    "Short Summary":"Refund below threshold",
+    "Decision Code":"RRBLW",
+    "Verbiage":"We have reviewed the claim in question and have determined that the claim was paid incorrectly, resulting in an overpayment in the amount of $(refund amount).  The reason for the refund is (insert reason for refund).  Please mail a copy of this letter and the refund to our office."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Timey Filing",
+    "Secondary Category":"Timey Filing",
+    "Scenario":"Cancalled Claim Request Upheld",
+    "Short Summary":"Cancelled Claim TFL",
+    "Decision Code":"CTCNL",
+    "Verbiage":"We have determined that the request to waive timely filing is upheld. The original claim (23341CB4492) submitted by the provider on 12\/07\/2023 and was rejected on 12\/14\/2023. According to the providers timely filing contract limit, you have 90 days to submit corrected claim. Please note that we received the correct claim on 04\/08\/2024, which is outside the allowed time period. If you have additional evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
+  },
+  {
+    "Coded By":"PDR",
+    "Primary Category":"Inquiry",
+    "Secondary Category":"In-/Out-of-Scope\/Decisions\/RM",
+    "Scenario":"When Provider request is undetermine",
+    "Short Summary":"Unable to determine request",
+    "Decision Code":"UDR ",
+    "Verbiage":"We have received a provider dispute from your office and unable to determine the nature of your request. Please clearly explain your request and return the information to our office."
+  }
+]
