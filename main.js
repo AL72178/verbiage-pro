@@ -25,22 +25,23 @@ function renderTable(data) {
     row.classList.add("hover:bg-gray-50", "transition-colors");
     row.innerHTML = `
   <td class="px-4 py-3 whitespace-normal break-words text-sm font-medium text-gray-900">
-    ${
-      item["Coded By"]?.toLowerCase() === "pdr"
-        ? `<span class="pill-badge">${item["Primary Category"]}</span>`
-        : item["Primary Category"]
-    }
+    ${item["Primary Category"]}
   </td>
   <td class="px-4 py-3 whitespace-normal break-words text-sm text-gray-600">
     ${item["Short Summary"]}
   </td>
   <td class="px-4 py-3 whitespace-normal break-words text-sm text-gray-600">
-    ${item["Decision Code"]}
+      ${
+        item["Coded By"]?.toLowerCase() === "pdr"
+          ? `<span class="pill-badge">${item["Decision Code"]}</span>`
+          : item["Decision Code"]
+      }
   </td>
   <td class="px-4 py-3 whitespace-normal break-words text-sm text-gray-600 verbiage-cell">
     ${verbiageHTML}
   </td>
-  <td class="px-4 py-3 whitespace-normal break-words text-sm font-medium space-x-2">
+  <td class="px-4 py-3 whitespace-normal break-words text-sm font-medium flex gap-1">
+
     <button class="action-button edit-button"><i class="fa-solid fa-scissors"></i></button>
     <button class="action-button copy-button"><i class="fa-solid fa-copy"></i></button>
   </td>
