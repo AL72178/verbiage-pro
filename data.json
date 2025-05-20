@@ -456,7 +456,7 @@
     "Scenario":"Requesting Correct Claim after Void",
     "Short Summary":"Originial Claim Void as per Void Claim, Requesting Corrected Claim.",
     "Decision Code":"RESBCC",
-    "Verbiage":"We have reviewed the claim in question and have determined that the claim was processed and subsequently recouped upon receipt of a void request submitted in the form of a void claim (voidDCN). As a result, the original daim (original DCN) has been voided in accordance with the void claim received. To proceed further, please resubmit a new claim correcting all necessary information according to the provider manual guidelines."
+    "Verbiage":"We have reviewed the claim in question and have determined that the claim was processed and subsequently recouped upon receipt of a void request submitted in the form of a void claim (voidDCN). As a result, the original claim (originalDCN) has been voided in accordance with the void claim received. To proceed further, please resubmit a new claim correcting all necessary information according to the provider manual guidelines."
   },
   {
     "Coded By":"User",
