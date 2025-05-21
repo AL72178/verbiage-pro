@@ -111,7 +111,7 @@ function applyFilters() {
       tab.style.display = categoryCounts[tabKey] ? "" : "none";
     }
   });
-
+/*
   // Apply selected tab
   filteredData =
     selectedTabCategory === "All"
@@ -122,7 +122,24 @@ function applyFilters() {
 
   displayPage(1);
 }
+*/
 
+// If search is empty, apply tab filter
+if (!query) {
+  filteredData =
+    selectedTabCategory === "All"
+      ? searchedData
+      : searchedData.filter(
+          (item) => item["Secondary Category"] === selectedTabCategory
+        );
+} else {
+  // If searching, ignore tab selection
+  filteredData = searchedData;
+}
+
+displayPage(1);
+
+  
 const clearSearchBtn = document.getElementById("clearSearch");
 
 searchInput.addEventListener("input", () => {
