@@ -15,81 +15,67 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body class="bg-gray-100">
     <main class="container mx-auto p-4 sm:p-6 lg:p-8">
       <div class="bg-white p-6 rounded-lg shadow-lg">
-        <div class="mb-6 border-b border-gray-200">
-          <nav class="flex flex-wrap -mb-px" aria-label="Tabs">
+        <!-- Scrollable Tabs -->
+        <div class="mb-6 border-b border-gray-200 overflow-x-auto">
+          <nav class="flex whitespace-nowrap -mb-px" aria-label="Tabs">
             <a
               href="#"
-              class="tab-active whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
+              class="tab-active py-3 px-4 border-b-2 font-medium text-sm"
+              >All</a
             >
-              All
-            </a>
-
             <a
               href="#"
-              class="tab-inactive hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
+              class="tab-inactive hover:text-gray-700 hover:border-gray-300 py-3 px-4 border-b-2 font-medium text-sm"
+              >Auth/LPP/PAM</a
             >
-              Auth/LPP/PAM
-            </a>
-
             <a
               href="#"
-              class="tab-inactive hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
+              class="tab-inactive hover:text-gray-700 hover:border-gray-300 py-3 px-4 border-b-2 font-medium text-sm"
+              >Corrected/Duplicate</a
             >
-              Corrected/Duplicate
-            </a>
-
             <a
               href="#"
-              class="tab-inactive hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
+              class="tab-inactive hover:text-gray-700 hover:border-gray-300 py-3 px-4 border-b-2 font-medium text-sm"
+              >In-/Out-of-Scope/Decisions/RM</a
             >
-              In-/Out-of-Scope/Decisions/RM
-            </a>
-
             <a
               href="#"
-              class="tab-inactive hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
+              class="tab-inactive hover:text-gray-700 hover:border-gray-300 py-3 px-4 border-b-2 font-medium text-sm"
+              >Non Covered Service</a
             >
-              Non Covered Service
-            </a>
-
             <a
               href="#"
-              class="tab-inactive hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
+              class="tab-inactive hover:text-gray-700 hover:border-gray-300 py-3 px-4 border-b-2 font-medium text-sm"
+              >Pricing</a
             >
-              Pricing
-            </a>
-
             <a
               href="#"
-              class="tab-inactive hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
+              class="tab-inactive hover:text-gray-700 hover:border-gray-300 py-3 px-4 border-b-2 font-medium text-sm"
+              >Requesting Additional</a
             >
-              Requesting Additional
-            </a>
-
             <a
               href="#"
-              class="tab-inactive hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
+              class="tab-inactive hover:text-gray-700 hover:border-gray-300 py-3 px-4 border-b-2 font-medium text-sm"
+              >Timely Filing</a
             >
-              Timey Filing
-            </a>
-
             <a
               href="#"
-              class="tab-inactive hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
+              class="tab-inactive hover:text-gray-700 hover:border-gray-300 py-3 px-4 border-b-2 font-medium text-sm"
+              >Other</a
             >
-              Other
-            </a>
           </nav>
         </div>
 
+        <!-- Responsive Search + Filters -->
         <div
-          class="flex flex-col md:flex-row justify-between items-center mb-6 space-y-4 md:space-y-0"
+          class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 space-y-4 md:space-y-0"
         >
           <div class="relative w-full md:w-1/2 lg:w-1/3">
-            <span span class="absolute inset-y-0 left-0 pl-3 flex items-center">
+            <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
               <i class="fas fa-search text-gray-400"></i>
             </span>
             <input
@@ -108,58 +94,60 @@
             </button>
           </div>
 
-          <!-- <div class="flex items-center space-x-2 sm:space-x-4">
-            <label class="inline-flex items-center space-x-2">
-              <input type="radio" name="codedByFilter" value="all" checked class="form-radio text-blue-500"/>
+          <div
+            class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 w-full md:w-auto"
+          >
+            <label class="inline-flex items-center space-x-2 mb-2 sm:mb-0">
+              <input
+                type="radio"
+                name="codedByFilter"
+                value="all"
+                checked
+                class="form-radio text-blue-500"
+              />
               <span>PDR + Custom Verbiage</span>
             </label>
             <label class="inline-flex items-center space-x-2">
-              <input type="radio" name="codedByFilter" value="pdr" class="form-radio text-blue-500"/>
+              <input
+                type="radio"
+                name="codedByFilter"
+                value="pdr"
+                class="form-radio text-blue-500"
+              />
               <span>Only PDR Verbiage</span>
             </label>
-          </div> -->
-
-          <div class="mb-4 flex gap-4 items-center flex-wrap">
-            <span class="font-semibold">Filter by Verbiage Type:</span>
-            <label
-              ><input type="radio" name="verbiageFilter" value="all" checked />
-              All</label
-            >
-            <label
-              ><input type="radio" name="verbiageFilter" value="onlyPDR" /> Only
-              PDR</label
-            >
-            <label
-              ><input type="radio" name="verbiageFilter" value="onlyCustom" />
-              Only Custom</label
-            >
           </div>
         </div>
 
-        <div class="table-container rounded-lg border border-gray-200">
-          <table class="min-w-full divide-y divide-gray-200">
+        <!-- Responsive Table -->
+        <div
+          class="table-container rounded-lg border border-gray-200 overflow-x-auto"
+        >
+          <table class="min-w-full divide-y divide-gray-200 text-sm">
             <thead class="bg-gray-50">
               <tr>
-                <th scope="col" class="px-4 py-3 text-left table-header-custom">
+                <th class="px-4 py-3 text-left table-header-custom">
                   Primary Category
                 </th>
-                <th scope="col" class="px-4 py-3 text-left table-header-custom">
+                <th class="px-4 py-3 text-left table-header-custom">
                   Short Summary
                 </th>
-                <th scope="col" class="px-4 py-3 text-left table-header-custom">
+                <th class="px-4 py-3 text-left table-header-custom">
                   Decision Code
                 </th>
-                <th scope="col" class="px-4 py-3 text-left table-header-custom">
+                <th class="px-4 py-3 text-left table-header-custom">
                   Verbiage
                 </th>
-                <th scope="col" class="px-4 py-3 text-left table-header-custom">
-                  Actions
-                </th>
+                <th class="px-4 py-3 text-left table-header-custom">Actions</th>
               </tr>
             </thead>
-            <tbody class="bg-white divide-y divide-gray-200"></tbody>
+            <tbody class="bg-white divide-y divide-gray-200">
+              <!-- Data rows will be inserted here dynamically -->
+            </tbody>
           </table>
         </div>
+
+        <!-- Pagination -->
         <div class="mt-6 flex justify-center">
           <nav
             class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
@@ -172,7 +160,7 @@
               <span class="sr-only">Previous</span>
               <i class="fas fa-chevron-left h-5 w-5"></i>
             </a>
-            <!-- Numbered page buttons will be inserted here dynamically by JS -->
+            <!-- Numbered buttons will be added dynamically -->
             <a
               href="#"
               class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
@@ -183,8 +171,45 @@
           </nav>
         </div>
       </div>
+
+      <!--=============== Letter Break Section ===============-->
+      <section
+        class="container mx-auto my-8 p-4 bg-white shadow rounded-lg"
+        id="Letter-Break"
+      >
+        <h2 class="text-2xl font-bold mb-4">Letter Break</h2>
+        <div id="inputContainer" class="mb-4">
+          <div class="space-y-2">
+            <textarea
+              id="inputText"
+              rows="4"
+              placeholder="Please write your verbiage here..."
+              class="w-full p-3 border rounded-md resize-none shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+            ></textarea>
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <span id="charCount" class="text-gray-600">Characters: 0</span>
+              <div class="flex gap-2">
+                <button
+                  id="divideButton"
+                  class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md"
+                >
+                  Divide Text
+                </button>
+                <button
+                  id="resetBtn"
+                  class="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-md"
+                >
+                  Reset
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="outputBoxes" class="grid gap-4 md:grid-cols-1 mt-4"></div>
+      </section>
     </main>
 
     <script src="main.js"></script>
+    <script src="function.js"></script>
   </body>
 </html>

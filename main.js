@@ -82,14 +82,15 @@ function renderTable(data) {
       </td>
       <td class="px-4 py-3 whitespace-normal break-words text-sm text-gray-600 verbiage-cell">${verbiageHTML}</td>
       <td class="px-4 py-3 whitespace-normal break-words text-sm font-medium flex gap-1">
-        <button class="action-button edit-button"><i class="fa-solid fa-scissors"></i></button>
-        <button class="action-button copy-button"><i class="fa-solid fa-copy"></i></button>
+        <button class="action-button edit-button break-button" title="Break Letter"><i class="fa-solid fa-scissors"></i></button>
+        <button class="action-button copy-button" title="Copy Verbiage"><i class="fa-solid fa-copy"></i></button>
       </td>
     `;
     tableBody.appendChild(row);
   });
 
   attachCopyHandlers();
+  attachBreakHandlers();
 }
 
 function attachCopyHandlers() {
@@ -105,6 +106,23 @@ function attachCopyHandlers() {
           btn.innerHTML = '<i class="fa-solid fa-copy"></i>';
         }, 1500);
       });
+    });
+  });
+}
+
+function attachBreakHandlers() {
+  const inputTextElement = document.getElementById("inputText");
+  if (!inputTextElement) return;
+
+  document.querySelectorAll(".break-button").forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      const row = btn.closest("tr");
+      const verbiageCell = row.querySelector(".verbiage-cell");
+      const textToBreak = verbiageCell.textContent.trim();
+
+      inputTextElement.value = textToBreak;
+      if (typeof countCharacters === "function") countCharacters();
+      if (typeof divideText === "function") divideText();
     });
   });
 }
