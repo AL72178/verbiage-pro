@@ -451,12 +451,12 @@
   },
   {
     "Coded By":"User",
-    "Primary Category":"HCM",
-    "Secondary Category":"Requesting Additional",
-    "Scenario":"No Review Required for HCM",
-    "Short Summary":"No Review Required for HCM",
-    "Decision Code":"HCM",
-    "Verbiage":"\"PROCREV MISSINGINACTIVE CRAV, PPR could not identify the provider and\/or procedure(s) billed as being flagged and have authorized Claims Operations to process the claim without PPR review, at normal Plan Benefits.\" and pay the claim"
+    "Primary Category":"Corrected\/Duplicate",
+    "Secondary Category":"Corrected\/Duplicate",
+    "Scenario":"Requesting Correct Claim after Void",
+    "Short Summary":"Originial Claim Void as per Void Claim, Requesting Corrected Claim.",
+    "Decision Code":"RESBCC",
+    "Verbiage":"We have reviewed the claim in question and have determined that the claim was processed and subsequently recouped upon receipt of a void request submitted in the form of a void claim (voidDCN). As a result, the original claim (originalDCN) has been voided in accordance with the void claim received. To proceed further, please resubmit a new claim correcting all necessary information according to the provider manual guidelines."
   },
   {
     "Coded By":"User",
