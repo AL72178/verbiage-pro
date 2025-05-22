@@ -26,48 +26,56 @@
             >
               All
             </a>
+
             <a
               href="#"
               class="tab-inactive hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
             >
               Auth/LPP/PAM
             </a>
+
             <a
               href="#"
               class="tab-inactive hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
             >
               Corrected/Duplicate
             </a>
+
             <a
               href="#"
               class="tab-inactive hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
             >
               In-/Out-of-Scope/Decisions/RM
             </a>
+
             <a
               href="#"
               class="tab-inactive hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
             >
               Non Covered Service
             </a>
+
             <a
               href="#"
               class="tab-inactive hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
             >
               Pricing
             </a>
+
             <a
               href="#"
               class="tab-inactive hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
             >
               Requesting Additional
             </a>
+
             <a
               href="#"
               class="tab-inactive hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
             >
               Timey Filing
             </a>
+
             <a
               href="#"
               class="tab-inactive hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-3 px-4 border-b-2 font-medium text-sm"
@@ -99,26 +107,32 @@
               &times;
             </button>
           </div>
-          <div class="flex items-center space-x-2 sm:space-x-4">
+
+          <!-- <div class="flex items-center space-x-2 sm:space-x-4">
             <label class="inline-flex items-center space-x-2">
-              <input
-                type="radio"
-                name="codedByFilter"
-                value="all"
-                checked
-                class="form-radio text-blue-500"
-              />
+              <input type="radio" name="codedByFilter" value="all" checked class="form-radio text-blue-500"/>
               <span>PDR + Custom Verbiage</span>
             </label>
             <label class="inline-flex items-center space-x-2">
-              <input
-                type="radio"
-                name="codedByFilter"
-                value="pdr"
-                class="form-radio text-blue-500"
-              />
+              <input type="radio" name="codedByFilter" value="pdr" class="form-radio text-blue-500"/>
               <span>Only PDR Verbiage</span>
             </label>
+          </div> -->
+
+          <div class="mb-4 flex gap-4 items-center flex-wrap">
+            <span class="font-semibold">Filter by Verbiage Type:</span>
+            <label
+              ><input type="radio" name="verbiageFilter" value="all" checked />
+              All</label
+            >
+            <label
+              ><input type="radio" name="verbiageFilter" value="onlyPDR" /> Only
+              PDR</label
+            >
+            <label
+              ><input type="radio" name="verbiageFilter" value="onlyCustom" />
+              Only Custom</label
+            >
           </div>
         </div>
 

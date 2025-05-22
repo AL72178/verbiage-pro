@@ -32,14 +32,14 @@
             transition: background-color 0.2s ease-in-out;
         }
         .edit-button {
-            background-color: #3b82f6; /* Blue */
+            background-color: #7380ec; 
             color: white;
         }
         .edit-button:hover {
             background-color: #2563eb;
         }
         .copy-button {
-            background-color: #6deea3; /* Red */
+            background-color: #1eca91; 
             color: white;
         }
         .copy-button:hover {
