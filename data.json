@@ -606,10 +606,19 @@
     "Coded By":"User",
     "Primary Category":"Corrected\/Duplicate",
     "Secondary Category":"Corrected\/Duplicate",
-    "Scenario":"Duplicate Claim",
+    "Scenario":"Corrected Claim",
     "Short Summary":"Requesting Separate Inquiry \u2013 Original IQT is Out of Scope",
     "Decision Code":"SEPINQ",
     "Verbiage":"The claim in question was denied correctly as a corrected claim. The original claim (DCN) already been adjusted based on the corrected claim. Please note, in order to review the denial in original claim, we kindly request you to submit the separate dispute along with complete clinical records and supporting documentation to review the case further."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"Corrected\/Duplicate",
+    "Secondary Category":"Corrected\/Duplicate",
+    "Scenario":"Duplicate Claim",
+    "Short Summary":"Requesting Separate Inquiry \u2013 Original IQT is Out of Scope",
+    "Decision Code":"SEPINQDDUP",
+    "Verbiage":"The claim in question was denied correctly as a duplicate of claim (DCN). Please note, in order to review the denial in original claim, we kindly request you to submit the separate dispute along with complete clinical records and supporting documentation to review the case further."
   },
   {
     "Coded By":"User",
