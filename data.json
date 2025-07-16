@@ -55,8 +55,8 @@
   },
   {
     "Coded By":"PDR",
-    "Primary Category":"Timey Filing",
-    "Secondary Category":"Timey Filing",
+    "Primary Category":"Timely Filing",
+    "Secondary Category":"Timely Filing",
     "Scenario":"Corrected Claim Timely Filing",
     "Short Summary":"Claim timely filing corrected claim not submitted timely",
     "Decision Code":"CTFCC",
@@ -64,8 +64,8 @@
   },
   {
     "Coded By":"PDR",
-    "Primary Category":"Timey Filing",
-    "Secondary Category":"Timey Filing",
+    "Primary Category":"Timely Filing",
+    "Secondary Category":"Timely Filing",
     "Scenario":"Timely Filing, Insufficient POTF",
     "Short Summary":"Claim is denied for timely filing and insufficient information submitted to waive timely filing.",
     "Decision Code":"CTFI",
@@ -73,8 +73,8 @@
   },
   {
     "Coded By":"PDR",
-    "Primary Category":"Timey Filing",
-    "Secondary Category":"Timey Filing",
+    "Primary Category":"Timely Filing",
+    "Secondary Category":"Timely Filing",
     "Scenario":"No POTF Received. Non Par",
     "Short Summary":"Claim timely filing nonparticipating provider",
     "Decision Code":"CTFN",
@@ -82,8 +82,8 @@
   },
   {
     "Coded By":"PDR",
-    "Primary Category":"Timey Filing",
-    "Secondary Category":"Timey Filing",
+    "Primary Category":"Timely Filing",
+    "Secondary Category":"Timely Filing",
     "Scenario":"Timely Filing POTF not considerable",
     "Short Summary":"POTF send by the provider is not consider valid, Claim remain denied. Upheld",
     "Decision Code":"CTFNA",
@@ -91,8 +91,8 @@
   },
   {
     "Coded By":"PDR",
-    "Primary Category":"Timey Filing",
-    "Secondary Category":"Timey Filing",
+    "Primary Category":"Timely Filing",
+    "Secondary Category":"Timely Filing",
     "Scenario":"No POTF Received. Par",
     "Short Summary":"Claim timely filing participating provider",
     "Decision Code":"CTFP",
@@ -456,7 +456,7 @@
     "Scenario":"Requesting Correct Claim after Void",
     "Short Summary":"Originial Claim Void as per Void Claim, Requesting Corrected Claim.",
     "Decision Code":"RESBCC",
-    "Verbiage":"We have reviewed the claim in question and have determined that the claim was processed and subsequently recouped upon receipt of a void request submitted in the form of a void claim (voidDCN). As a result, the original daim (original DCN) has been voided in accordance with the void claim received. To proceed further, please resubmit a new claim correcting all necessary information according to the provider manual guidelines."
+    "Verbiage":"We have reviewed the claim in question and have determined that the claim was processed and subsequently recouped upon receipt of a void request submitted in the form of a void claim (voidDCN). As a result, the original caim (original DCN) has been voided in accordance with the void claim received. To proceed further, please resubmit a new claim correcting all necessary information according to the provider manual guidelines."
   },
   {
     "Coded By":"User",
@@ -583,6 +583,15 @@
     "Short Summary":"Provider Submitted Records Indicate In-Network; System Shows Out-of-Network",
     "Decision Code":"REPRDR",
     "Verbiage":"We have reviewed the submitted information and would like to inform you that, as per our records, the provider is currently listed as Out-of Network. To move forward with your request, we kindly request you to please update your provider's demographic information."
+  },
+  {
+    "Coded By":"User",
+    "Primary Category":"CERIS",
+    "Secondary Category":"Other",
+    "Scenario":"CERIS review",
+    "Short Summary":"CERIS Upholding the previous decision on file",
+    "Decision Code":"CERIS",
+    "Verbiage":"The dispute in question was upheld, as the amount of $(amount) was disallowed as per CERIS re-review that was made on (date). Since, we don’t see discrepancy in the payment and disallowed charges that was made earlier, we are upholding the amount paid in our previous decision/record. Please find the attached MLH#(f_docnum) that was re-reviewed and sent by CERIS."
   },
   {
     "Coded By":"User",
