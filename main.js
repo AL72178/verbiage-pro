@@ -1,4 +1,6 @@
-const tabs = document.querySelectorAll('nav[aria-label="Tabs"] a');
+let tabs = [];
+// Removed static tabs constant since we generate them dynamically
+const dynamicTabsContainer = document.getElementById('dynamicTabs');
 const tableBody = document.querySelector("tbody");
 const paginationContainer = document.querySelector(".mt-6 nav");
 const searchInput = document.querySelector("input[type='text']");
@@ -14,7 +16,7 @@ let allData = [];
 let filteredData = [];
 let currentPage = 1;
 let selectedRadioValue = "all";
-let selectedTabCategory = "All";
+let selectedTabCategory = "All"; // This now corresponds to the 'Inquiry' field
 
 // --- Utility Functions ---
 
@@ -34,7 +36,14 @@ function getFilteredByRadio(data, value) {
 
 function getSearchFiltered(data, query) {
   return data.filter((item) =>
-    ["Decision Code", "Short Summary", "Verbiage", "Scenario"].some((key) =>
+    [
+      "Inquiry", 
+      "Secondary Category", 
+      "Scenario", 
+      "Decision Code", 
+      "Short Summary", 
+      "Verbiage"
+    ].some((key) =>
       item[key]?.toLowerCase().includes(query)
     )
   );
@@ -48,6 +57,43 @@ function setActiveTab(tabText) {
     isActive
       ? t.setAttribute("aria-current", "page")
       : t.removeAttribute("aria-current");
+  });
+}
+
+// --- Dynamic Tabs Rendering ---
+function renderTabs(data) {
+  // Extract unique Inquiry categories
+  const categories = new Set(["All"]);
+  data.forEach(item => {
+    if (item["Inquiry"]) {
+      categories.add(item["Inquiry"].trim());
+    }
+  });
+
+  dynamicTabsContainer.innerHTML = "";
+  tabs = []; // Clear current tabs
+
+  categories.forEach(category => {
+    const a = document.createElement("a");
+    a.href = "#";
+    // First tab is active by default
+    if (category === "All") {
+      a.className = "tab-active py-3 px-4 border-b-2 font-medium text-sm";
+      a.setAttribute("aria-current", "page");
+    } else {
+      a.className = "tab-inactive hover:text-gray-700 hover:border-gray-300 py-3 px-4 border-b-2 font-medium text-sm";
+    }
+    a.textContent = category;
+
+    a.addEventListener("click", (event) => {
+      event.preventDefault();
+      selectedTabCategory = event.currentTarget.textContent.trim();
+      setActiveTab(selectedTabCategory);
+      applyFilters();
+    });
+
+    dynamicTabsContainer.appendChild(a);
+    tabs.push(a);
   });
 }
 
@@ -67,12 +113,14 @@ function renderTable(data) {
     const row = document.createElement("tr");
     row.classList.add("hover:bg-gray-50", "transition-colors");
     row.innerHTML = `
-      <td class="px-4 py-3 whitespace-normal break-words text-sm font-medium text-gray-900">${
-        item["Primary Category"]
-      }</td>
-      <td class="px-4 py-3 whitespace-normal break-words text-sm text-gray-600">${
-        item["Short Summary"]
-      }</td>
+      <td class="px-4 py-3 whitespace-normal break-words text-sm font-medium text-gray-900">
+        <div class="font-bold">${item["Inquiry"] || 'N/A'}</div>
+        <div class="text-xs text-gray-500">${item["Secondary Category"] || ''}</div>
+      </td>
+      <td class="px-4 py-3 whitespace-normal break-words text-sm text-gray-600">
+        <div class="font-semibold text-gray-800">${item["Scenario"] || ''}</div>
+        <div class="mt-1">${item["Short Summary"] || ''}</div>
+      </td>
       <td class="px-4 py-3 whitespace-normal break-words text-sm text-gray-600">
         ${
           item["Coded By"]?.toLowerCase() === "pdr"
@@ -114,7 +162,7 @@ function attachBreakHandlers() {
   const inputTextElement = document.getElementById("inputText");
   if (!inputTextElement) return;
 
-  document.querySelectorAll(".break-button").forEach((btn, index) => {
+  document.querySelectorAll(".break-button").forEach((btn) => {
     btn.addEventListener("click", () => {
       const row = btn.closest("tr");
       const verbiageCell = row.querySelector(".verbiage-cell");
@@ -145,18 +193,23 @@ function renderPagination(totalPages) {
   }
 
   prevBtn.classList.toggle("pointer-events-none", currentPage === 1);
-  nextBtn.classList.toggle("pointer-events-none", currentPage === totalPages);
+  nextBtn.classList.toggle("pointer-events-none", currentPage === totalPages || totalPages === 0);
 }
 
 function displayPage(page) {
-  currentPage = Math.max(
-    1,
-    Math.min(page, Math.ceil(filteredData.length / rowsPerPage))
-  );
+  const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+  currentPage = Math.max(1, Math.min(page, totalPages));
+  
+  if (filteredData.length === 0) {
+      renderTable([]);
+      renderPagination(0);
+      return;
+  }
+  
   const start = (currentPage - 1) * rowsPerPage;
   const end = start + rowsPerPage;
   renderTable(filteredData.slice(start, end));
-  renderPagination(Math.ceil(filteredData.length / rowsPerPage));
+  renderPagination(totalPages);
 }
 
 // --- Filtering and Event Binding ---
@@ -166,10 +219,10 @@ function applyFilters() {
   const radioFiltered = getFilteredByRadio(allData, selectedRadioValue);
   const searchFiltered = getSearchFiltered(radioFiltered, query);
 
-  // Tab filtering and visibility
+  // Tab filtering and visibility based on 'Inquiry'
   const categoryCounts = {};
   searchFiltered.forEach((item) => {
-    const category = item["Secondary Category"] || "All";
+    const category = item["Inquiry"] || "All";
     categoryCounts[category] = (categoryCounts[category] || 0) + 1;
   });
 
@@ -196,7 +249,7 @@ function applyFilters() {
     selectedTabCategory === "All"
       ? searchFiltered
       : searchFiltered.filter(
-          (item) => item["Secondary Category"] === selectedTabCategory
+          (item) => item["Inquiry"] === selectedTabCategory
         );
 
   displayPage(1);
@@ -225,15 +278,6 @@ codedByRadios.forEach((radio) => {
   });
 });
 
-tabs.forEach((tab) => {
-  tab.addEventListener("click", (event) => {
-    event.preventDefault();
-    selectedTabCategory = event.currentTarget.textContent.trim();
-    setActiveTab(selectedTabCategory);
-    applyFilters();
-  });
-});
-
 paginationContainer.addEventListener("click", (e) => {
   const target = e.target.closest("a");
   if (!target) return;
@@ -256,12 +300,17 @@ paginationContainer.addEventListener("click", (e) => {
 
 // --- Load Data ---
 
-fetch("data.json")
+fetch("newData.json")
   .then((response) => response.json())
   .then((data) => {
     if (!Array.isArray(data)) throw new Error("Invalid data format");
     allData = data;
     filteredData = allData;
+    
+    // First, correctly generate the dynamic tabs based on the data
+    renderTabs(data);
+    
+    // Then display the first page of results
     displayPage(1);
   })
   .catch((error) => console.error("Error loading data:", error));
