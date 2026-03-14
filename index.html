@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body class="bg-gray-100">
@@ -102,6 +102,9 @@
           <div class="flex items-center justify-between gap-2 flex-wrap">
             <span id="charCount" class="text-gray-600">Characters: 0</span>
             <div class="flex gap-2">
+              <button id="applyAbbrevBtn" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-md">
+                Apply Abbrev
+              </button>
               <button id="divideButton" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">
                 Divide Text
               </button>
@@ -116,8 +119,37 @@
     </section>
   </main>
 
-  <script src="main.js"></script>
-  <script src="function.js"></script>
+  <!--==================== FOOTER ====================-->
+  <footer class="footer mt-12 py-6 bg-gray-800 text-white">
+    <div
+      class="footer__container container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-sm">
+      <!-- LEFT: Email Me -->
+      <div class="footer__group flex items-center mb-4 md:mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"
+          class="mr-2">
+          <path
+            d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 2v.51l-8 6.22-8-6.22V6zM4 18V9.04l7.39 5.74c.18.14.4.21.61.21s.43-.07.61-.21L20 9.03v8.96H4Z">
+          </path>
+        </svg>
+        <a href="mailto:nishant.singh@carelon.com" class="hover:text-blue-400 transition-colors">Email Me</a>
+      </div>
+
+      <!-- MIDDLE: Documentation -->
+      <div class="footer__group text-gray-300 mb-4 md:mb-0">
+        <a href="./pages/guide.html" target="_blank"
+          class="hover:text-blue-400 transition-colors underline underline-offset-2">How to Use & Manage Data</a>
+      </div>
+
+      <!-- RIGHT: Developed By -->
+      <div class="footer__group text-gray-400">
+        <p class="footer__copy">Developed and Coded by <span class="font-medium text-white">Nishant Singh</span> | 2024
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/function.js"></script>
 </body>
 
 </html>

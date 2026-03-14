@@ -6,7 +6,7 @@
     "Scenario": "Denial for Non Medical Necessity",
     "Short Summary": "Appeal Letter for Claim",
     "Decision Code": "APLCLM",
-    "Verbiage": "Please be advised that no payment was made to the claim as date of service from (fromDate) to (toDate) were denied as investigational WMDS Case No: (UMxxxxxx). If you disagree with this decision, please submit a written provider appeal to include the extenuating circumstances and supporting medical records for an appeal review."
+    "Verbiage": "Please be advised that no payment was made to the claim as date of service from (*fromDate) to (*toDate) were denied as investigational WMDS Case No: (*UMxxxxxx). If you disagree with this decision, please submit a written provider appeal to include the extenuating circumstances and supporting medical records for an appeal review."
   },
   {
     "Coded By": "User",
@@ -15,7 +15,7 @@
     "Scenario": "Denial for Non Medical Necessity",
     "Short Summary": "Appeal Letter for Specific CPT",
     "Decision Code": "APLCPT",
-    "Verbiage": "Please be advised that the procedure code (cptCode) has been denied correctly as per the authorization (UMxxxxxx), due to not medically necessity. To request a clinical review for this denial, please submit an appeal letter along with the relevant medical records for further review of this matter."
+    "Verbiage": "Please be advised that the procedure code (*cptCode) has been denied correctly as per the authorization (*UMxxxxxx), due to not medically necessity. To request a clinical review for this denial, please submit an appeal letter along with the relevant medical records for further review of this matter."
   },
   {
     "Coded By": "User",
@@ -24,7 +24,7 @@
     "Scenario": "Does/Unit Mismatch",
     "Short Summary": "Less doses approved against the billed number of doses in claim.",
     "Decision Code": "AULESS",
-    "Verbiage": "Please be advised that the service (CPTcode) billed in the claim was processed according to the doses approved in the authorization. The authorization (UMxxxxxx) approved (approvedUnit) unit of dose. Upon reviewing the claim, the service was billed for (billedUnit) unit of dose. Therefore, the claim was adjusted as per approved units of doses in the the authorization and priced in accordance with the provider's contract."
+    "Verbiage": "Please be advised that the service (*CPTcode) billed in the claim was processed according to the doses approved in the authorization. The authorization (*UMxxxxxx) approved (*approvedUnit) unit of dose. Upon reviewing the claim, the service was billed for (*billedUnit) unit of dose. Therefore, the claim was adjusted as per approved units of doses in the the authorization and priced in accordance with the provider's contract."
   },
   {
     "Coded By": "User",
@@ -33,7 +33,7 @@
     "Scenario": "Does/Unit Mismatch",
     "Short Summary": "Authorized Units Already Met",
     "Decision Code": "AUNMET",
-    "Verbiage": "The authorization (UMxxxxxx) received does not have any remaining approved units to render the service. An extenuating circumstance with the rationale the preauthorization was not requested according to your provider contract was not received.  In order for us to make a determination on the dispute, submit the extenuating circumstance along with the medical records. No additional Authorization received on file. "
+    "Verbiage": "The authorization (*UMxxxxxx) received does not have any remaining approved units to render the service. An extenuating circumstance with the rationale the preauthorization was not requested according to your provider contract was not received. In order for us to make a determination on the dispute, submit the extenuating circumstance along with the medical records. No additional Authorization received on file."
   },
   {
     "Coded By": "User",
@@ -42,7 +42,7 @@
     "Scenario": "POS/CPT Mismatch",
     "Short Summary": "POS Mismatch – Claim Billed with Different POS than Approved",
     "Decision Code": "POSMISM",
-    "Verbiage": "We have reviewed the information submitted, and the denial is upheld. The information submitted has been carefully evaluated and we have determined that the claim was processed correctly. Upon further inspection, it was found that the authorization (UMxxxxxx) received in claim is approved for POS (POS) and the claim is billed under POS (POS). Therefore the claim denied correctly for site of care mismatch. Please submit valid authorization for outpatient place of treatment."
+    "Verbiage": "We have reviewed the information submitted, and the denial is upheld. The information submitted has been carefully evaluated and we have determined that the claim was processed correctly. Upon further inspection, it was found that the authorization (*UMxxxxxx) received in claim is approved for POS (*POS) and the claim is billed under POS (*POS). Therefore the claim denied correctly for site of care mismatch. Please submit valid authorization for outpatient place of treatment."
   },
   {
     "Coded By": "PDR",
@@ -69,7 +69,7 @@
     "Scenario": "POS/CPT Mismatch",
     "Short Summary": "Authorization does not match the claim",
     "Decision Code": "ANMC",
-    "Verbiage": "The authorization does not match the date of service or the service(s) billed on the claim. In order for us to make a determination on the dispute, we need the medical records from you.    "
+    "Verbiage": "The authorization does not match the date of service or the service(s) billed on the claim. In order for us to make a determination on the dispute, we need the medical records from you."
   },
   {
     "Coded By": "PDR",
@@ -114,7 +114,7 @@
     "Scenario": "Duplicate Claim denid correctly.",
     "Short Summary": "Duplicate Claim denid correctly.",
     "Decision Code": "DDC",
-    "Verbiage": "The claim in question was denied correctly as a duplicate of claim (duplicate claim number)."
+    "Verbiage": "The claim in question was denied correctly as a duplicate of claim (*duplicate_claim_number)."
   },
   {
     "Coded By": "User",
@@ -123,7 +123,7 @@
     "Scenario": "Corrected Claim processed.",
     "Short Summary": "Corrected Claim denied correctly and original claim already adjusted.",
     "Decision Code": "CLMADJ",
-    "Verbiage": "The claim in question was denied correctly as a corrected claim. The original claim (OriginalDCN) already been adjusted and processed based on the corrected claim (correctedDCN) on (checkDate) check number (checkNumber). No further adjustment is required."
+    "Verbiage": "The claim in question was denied correctly as a corrected claim. The original claim (*OriginalDCN) already been adjusted and processed based on the corrected claim (*correctedDCN) on (*checkDate) check number (*checkNumber). No further adjustment is required."
   },
   {
     "Coded By": "User",
@@ -132,7 +132,7 @@
     "Scenario": "Void Claim processed.",
     "Short Summary": "Informing provider that the claim is voided as per the void claim received.",
     "Decision Code": "RESBCC",
-    "Verbiage": "We have reviewed the claim in question and have determined that the claim was processed and subsequently recouped upon receipt of a void request submitted in the form of a void claim (voidDCN). As a result, the original caim (original DCN) has been voided in accordance with the void claim received. To proceed further, please resubmit a new claim correcting all necessary information according to the provider manual guidelines."
+    "Verbiage": "We have reviewed the claim in question and have determined that the claim was processed and subsequently recouped upon receipt of a void request submitted in the form of a void claim (*voidDCN). As a result, the original caim (*original DCN) has been voided in accordance with the void claim received. To proceed further, please resubmit a new claim correcting all necessary information according to the provider manual guidelines."
   },
   {
     "Coded By": "User",
@@ -150,7 +150,7 @@
     "Scenario": "Indirect Dispute for Original Claim",
     "Short Summary": "Requesting Separate Inquiry – Current Claim is Corrected Claim.",
     "Decision Code": "SEPINQ",
-    "Verbiage": "The claim in question was denied correctly as a corrected claim. The original claim (DCN) already been adjusted based on the corrected claim. Please note, in order to review the denial in original claim, we kindly request you to submit the separate dispute along with complete clinical records and supporting documentation to review the case further."
+    "Verbiage": "The claim in question was denied correctly as a corrected claim. The original claim (*DCN) already been adjusted based on the corrected claim. Please note, in order to review the denial in original claim, we kindly request you to submit the separate dispute along with complete clinical records and supporting documentation to review the case further."
   },
   {
     "Coded By": "User",
@@ -159,7 +159,7 @@
     "Scenario": "Indirect Dispute for Original Claim",
     "Short Summary": "Requesting Separate Inquiry – Current Claim is Duplicate Claim.",
     "Decision Code": "SEPINQDDUP",
-    "Verbiage": "The claim in question was denied correctly as a duplicate of claim (DCN). Please note, in order to review the denial in original claim, we kindly request you to submit the separate dispute along with complete clinical records and supporting documentation to review the case further."
+    "Verbiage": "The claim in question was denied correctly as a duplicate of claim (*DCN). Please note, in order to review the denial in original claim, we kindly request you to submit the separate dispute along with complete clinical records and supporting documentation to review the case further."
   },
   {
     "Coded By": "PDR",
@@ -168,7 +168,7 @@
     "Scenario": "Service performed after the effective date.",
     "Short Summary": "Eligibility date of service after contract cancelled date",
     "Decision Code": "ECCD",
-    "Verbiage": "Our records indicate the services occurred after the member’s termination date of (term date). Please contact the member to verify their insurance information. If the member feels that this is incorrect they may contact member services. "
+    "Verbiage": "Our records indicate the services occurred after the member’s termination date of (*term_date). Please contact the member to verify their insurance information. If the member feels that this is incorrect they may contact member services. "
   },
   {
     "Coded By": "PDR",
@@ -177,7 +177,7 @@
     "Scenario": "Service performed before the effective date.",
     "Short Summary": "Eligibility date of service before contract effective date",
     "Decision Code": "ECED",
-    "Verbiage": "Our records indicate the services occurred prior to the member’s effective date of (eff date). Please contact the member to verify their insurance information. If the member feels that this is incorrect they may contact member services. "
+    "Verbiage": "Our records indicate the services occurred prior to the member’s effective date of (*eff_date). Please contact the member to verify their insurance information. If the member feels that this is incorrect they may contact member services. "
   },
   {
     "Coded By": "PDR",
@@ -204,7 +204,7 @@
     "Scenario": "Duplicate Inquiry",
     "Short Summary": "Duplicate Dispute, No In Progress IQT",
     "Decision Code": "DDN",
-    "Verbiage": "Our records indicate that a letter was sent to you dated (date of letter) with a decision on your dispute."
+    "Verbiage": "Our records indicate that a letter was sent to you dated (*date_of_letter) with a decision on your dispute."
   },
   {
     "Coded By": "PDR",
@@ -231,7 +231,7 @@
     "Scenario": "IQT related to Dispute TFL",
     "Short Summary": "Inquiry Submission Days Limit is exhausted. (For Central and East States) 2nd Level Appeal",
     "Decision Code": "DTFC",
-    "Verbiage": "The time limit for submitting a Claim Payment Appeal has expired. Participating providers should reference the timeframe stated in the provider manual or in your provider agreement. Your Claim Payment Appeal request was received after the required deadline. We regret to inform you that your Claim Payment Appeal request is denied. If you believe you have extenuating circumstances that impacted the timely submission of your Claim Payment Appeal, you can resubmit a Claim Payment Appeal with proper documentation through the Disputes function in Availity Essentials, or in writing via postal mail to the address in the Provider Manual. "
+    "Verbiage": "The time limit for submitting a Claim Payment Appeal has expired. Participating providers should reference the timeframe stated in the provider manual or in your provider agreement. Your Claim Payment Appeal request was received after the required deadline. We regret to inform you that your Claim Payment Appeal request is denied. If you believe you have extenuating circumstances that impacted the timely submission of your Claim Payment Appeal, you can resubmit a Claim Payment Appeal with proper documentation through the Disputes function in Availity Essentials, or in writing via postal mail to the address in the Provider Manual."
   },
   {
     "Coded By": "PDR",
@@ -249,7 +249,7 @@
     "Scenario": "IQT related to Dispute TFL",
     "Short Summary": "Inquiry Submission Days Limit is exhausted. (For West provider and UniCare GIC)",
     "Decision Code": "DTFNW",
-    "Verbiage": "The time limit for submitting a provider dispute has expired. The dispute must be submitted within (market timely filing) of the date of the explanation of payment. Your dispute request was received after the deadline.  We regret to inform you that the request is denied."
+    "Verbiage": "The time limit for submitting a provider dispute has expired. The dispute must be submitted within (*market_timely_filing) of the date of the explanation of payment. Your dispute request was received after the deadline.  We regret to inform you that the request is denied."
   },
   {
     "Coded By": "PDR",
@@ -339,7 +339,7 @@
     "Scenario": "IQT - related to Recovery",
     "Short Summary": "Refund below threshold",
     "Decision Code": "RRBLW",
-    "Verbiage": "We have reviewed the claim in question and have determined that the claim was paid incorrectly, resulting in an overpayment in the amount of $(refund amount). The reason for the refund is (insert reason for refund). Please mail a copy of this letter and the refund to our office."
+    "Verbiage": "We have reviewed the claim in question and have determined that the claim was paid incorrectly, resulting in an overpayment in the amount of $(*refund_amount). The reason for the refund is (*reason_for_refund). Please mail a copy of this letter and the refund to our office."
   },
   {
     "Coded By": "User",
@@ -348,7 +348,7 @@
     "Scenario": "Sweep Decision",
     "Short Summary": "Sweep Adjustment Decision",
     "Decision Code": "SWEEPD",
-    "Verbiage": "The claim was adjusted under Sweep Adjustment . The services rendered have been processed according to your provider contract. You will receive a new Explanation of Payment and any appropriate payment within two weeks."
+    "Verbiage": "The claim was adjusted under Sweep Adjustment. The services rendered have been processed according to your provider contract. You will receive a new Explanation of Payment and any appropriate payment within two weeks."
   },
   {
     "Coded By": "User",
@@ -366,7 +366,7 @@
     "Scenario": "NON-Covered Denial Services",
     "Short Summary": "Non-Covered Service",
     "Decision Code": "NOCOSR",
-    "Verbiage": "We have determined that the charges for the services rendered have been  correctly denied under the patient's medical plan. The service is non-covered according to the member's benefit contract. Surgery services performed in Outpatient Facilities are not covered as per member's contract. "
+    "Verbiage": "We have determined that the charges for the services rendered have been correctly denied under the patient's medical plan. The service is non-covered according to the member's benefit contract. Surgery services performed in Outpatient Facilities are not covered as per member's contract."
   },
   {
     "Coded By": "User",
@@ -393,7 +393,7 @@
     "Scenario": "Provider Responsibility Denial",
     "Short Summary": "LabCorp/Non Eligible Lab - Related Denial",
     "Decision Code": "NOLABC",
-    "Verbiage": "We have determined that the charges for the services rendered have been  correctly denied under the patient's medical plan. We denied this service because the lab work wasn't done by our contracted facility. No further adjustment is required. Therefore upholding the case."
+    "Verbiage": "We have determined that the charges for the services rendered have been correctly denied under the patient's medical plan. We denied this service because the lab work wasn't done by our contracted facility. No further adjustment is required. Therefore upholding the case."
   },
   {
     "Coded By": "User",
@@ -456,7 +456,7 @@
     "Scenario": "Claim already priced",
     "Short Summary": "Duplicate dispute claim adjusted",
     "Decision Code": "DDA",
-    "Verbiage": "Our records indicate that a payment of $(payment amount) was issued to your office on (check date) check number (check number)."
+    "Verbiage": "Our records indicate that a payment of $(*payment_amount) was issued to your office on (*check_date) check number (*check_number)."
   },
   {
     "Coded By": "PDR",
@@ -501,7 +501,7 @@
     "Scenario": "No Separate Reimbursement for CPT",
     "Short Summary": "No Separate Reimbursement",
     "Decision Code": "NOSPREI",
-    "Verbiage": "Please be advised that the service (cptCode) billed in claim, will not going to paid separately. Please note, that the charge for this service is already including in the primary procedure billed in the claim. Payment made in claim as per the provider's contract. No additional payment due."
+    "Verbiage": "Please be advised that the service (*cptCode) billed in claim, will not going to paid separately. Please note, that the charge for this service is already including in the primary procedure billed in the claim. Payment made in claim as per the provider's contract. No additional payment due."
   },
   {
     "Coded By": "User",
@@ -519,7 +519,7 @@
     "Scenario": "Requesting Resubmission",
     "Short Summary": "Requesting Void Claim",
     "Decision Code": "REVOID",
-    "Verbiage": "Please be advised that in order to recoup the payment of ($amount) from the claim, we require void claim to further process this claim for recoupment. Kindly  Re-submit the claim as a void claim according to the provider manual guidelines."
+    "Verbiage": "Please be advised that in order to recoup the payment of $(*amount) from the claim, we require void claim to further process this claim for recoupment. Kindly  Re-submit the claim as a void claim according to the provider manual guidelines."
   },
   {
     "Coded By": "User",
@@ -546,7 +546,7 @@
     "Scenario": "CERIS Uphold Case",
     "Short Summary": "CERIS Upholding the previous decision on file",
     "Decision Code": "CERIS",
-    "Verbiage": "The dispute in question was upheld, as the amount of $(amount) was disallowed as per CERIS re-review that was made on (date). Since, we don’t see discrepancy in the payment and disallowed charges that was made earlier, we are upholding the amount paid in our previous decision/record. Please find the attached MLH#(f_docnum) that was re-reviewed and sent by CERIS."
+    "Verbiage": "The dispute in question was upheld, as the amount of $(amount) was disallowed as per CERIS re-review that was made on (date). Since, we don’t see discrepancy in the payment and disallowed charges that was made earlier, we are upholding the amount paid in our previous decision/record. Please find the attached document no. (*f_docnum) that was re-reviewed and sent by CERIS."
   },
   {
     "Coded By": "User",
@@ -573,7 +573,7 @@
     "Scenario": "Requesting Medical Records",
     "Short Summary": "Decision Due to Miscoding",
     "Decision Code": "MISCOD",
-    "Verbiage": "Please be informed that upon thorough examination, the medical records provided do not sufficiently support the billed details on the claim. Therefore, the claim will remain denied for invalid/miscoding procedure code billed. The denial remains in line with our established guidelines.  If you possess additional information or medical records, feel free to submit them for further reconsideration."
+    "Verbiage": "Please be informed that upon thorough examination, the medical records provided do not sufficiently support the billed details on the claim. Therefore, the claim will remain denied for invalid/miscoding procedure code billed. The denial remains in line with our established guidelines. If you possess additional information or medical records, feel free to submit them for further reconsideration."
   },
   {
     "Coded By": "User",
@@ -609,7 +609,7 @@
     "Scenario": "When medical record requested, but not yet received.",
     "Short Summary": "Medical records requested not received",
     "Decision Code": "MRNR",
-    "Verbiage": "Our records indicate that a letter was sent to you dated (date of letter) requesting medical records. We have not received the medical records. In order for us to make a determination on the dispute, we need the medical records from you.  "
+    "Verbiage": "Our records indicate that a letter was sent to you dated (*date_of_letter) requesting medical records. We have not received the medical records. In order for us to make a determination on the dispute, we need the medical records from you.  "
   },
   {
     "Coded By": "User",
@@ -636,7 +636,7 @@
     "Scenario": "Corrected Claim Timely Filing",
     "Short Summary": "Claim timely filing corrected claim not submitted timely",
     "Decision Code": "CTFCC",
-    "Verbiage": "We have determined that the corrected claim has been denied correctly for timely filing. The corrected claim was received on (receive date) and the timely filing limit is (timely filing limit). If you have evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
+    "Verbiage": "We have determined that the corrected claim has been denied correctly for timely filing. The corrected claim was received on (*receive_date) and the timely filing limit is (*timely_filing_limit). If you have evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
   },
   {
     "Coded By": "PDR",
@@ -654,7 +654,7 @@
     "Scenario": "No POTF Received. Non Par",
     "Short Summary": "Claim timely filing nonparticipating provider",
     "Decision Code": "CTFN",
-    "Verbiage": "We have determined that the charges for the services rendered have been denied correctly for timely filing according to the member's contract. The timely filing limit is (member contract timely filing limit) and your claim was received (receive date).  If you have evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
+    "Verbiage": "We have determined that the charges for the services rendered have been denied correctly for timely filing according to the member's contract. The timely filing limit is (*member_contract_timely_filing_limit) and your claim was received (*receive_date).  If you have evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
   },
   {
     "Coded By": "PDR",
@@ -672,7 +672,7 @@
     "Scenario": "No POTF Received. Par",
     "Short Summary": "Claim timely filing participating provider",
     "Decision Code": "CTFP",
-    "Verbiage": "We have determined that the charges for the services rendered have been denied correctly for timely filing according to your contract. The timely filing limit is (provider timely filing limit) and your claim was received (receive date). If you have evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
+    "Verbiage": "We have determined that the charges for the services rendered have been denied correctly for timely filing according to your contract. The timely filing limit is (*provider_timely_filing_limit) and your claim was received (*receive_date). If you have evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
   },
   {
     "Coded By": "User",
@@ -681,7 +681,7 @@
     "Scenario": "Cancelled Claim Request Upheld",
     "Short Summary": "Cancelled Claim – Timely Filing",
     "Decision Code": "CLTFL",
-    "Verbiage": "The documentation received is not sufficient to wave timely filing. The original claim (OriginalDCN) submitted by the provider on (receivedDate) and was rejected on (ClaimDeleteDate). According to the providers timely filing contract limit, you have (tflLimitDays) days to re-submit the claim with correct information. Please note that we received the claim with correction on (updatedClaimReceivedDate), which is outside the allowed time period. If you have additional evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
+    "Verbiage": "The documentation received is not sufficient to wave timely filing. The original claim (*OriginalDCN) submitted by the provider on (*receivedDate) and was rejected on (*ClaimDeleteDate). According to the providers timely filing contract limit, you have (*tflLimitDays) days to re-submit the claim with correct information. Please note that we received the claim with correction on (*updatedClaimReceivedDate), which is outside the allowed time period. If you have additional evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
   },
   {
     "Coded By": "User",
@@ -690,6 +690,6 @@
     "Scenario": "Provider submit to other insurance incorrectly",
     "Short Summary": "Provider submit to other insurance incorrectly",
     "Decision Code": "TFLOTHR",
-    "Verbiage": "The documentation received is not sufficient to wave timely filing. The claim was originally send to other payor and as per the attached documentation; provider received the Explanation of benefits on (rejected/accepted_date_asper_mlh). Provider need to re-submit the claim to from within the Anthem within (tfl_limit) according to the providers timely filing contract limit. Please note that we received the claim on (our_claim_rec_date), which is outside the allowed time period. If you have additional evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
+    "Verbiage": "The documentation received is not sufficient to wave timely filing. The claim was originally send to other payor and as per the attached documentation; provider received the Explanation of benefits on (*rejected/accepted_date_asper_mlh). Provider need to re-submit the claim to from within the Anthem within (*tfl_limit) according to the providers timely filing contract limit. Please note that we received the claim on (*our_claim_rec_date), which is outside the allowed time period. If you have additional evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
   }
 ]

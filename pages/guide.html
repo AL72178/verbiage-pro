@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Use & Manage Data - Verbiage Pro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Custom Scrollbar for better aesthetics */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white border-b sticky top-0 z-10 shadow-sm">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-book-open text-blue-600 text-xl"></i>
+        <h1 class="text-xl font-bold text-gray-900">Verbiage Pro Guide</h1>
+      </div>
+      <a href="index.html"
+        class="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">
+        <i class="fas fa-arrow-left"></i> Back to App
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-4xl">
+
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-8">
+      <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Verbiage Assist Documentation</h2>
+      <p class="text-lg text-gray-600 mb-6">
+        Verbiage Assist is a tool designed to easily retrieve, search, copy, and modify Provider Letter verbiage. It
+        uses a clean UI to display official and custom verbiage templates, allowing agents to quickly adjust parameters
+        and copy responses into their workflow.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-8">
+      <h3 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2"><i class="fas fa-database text-blue-500 mr-2"></i>
+        Managing Data (<code>Data.json</code>)</h3>
+      <p class="text-gray-700 mb-4">
+        Currently, all the data for Verbiage Assist is stored statically within <code>./js/Data.json</code>. Regardless
+        of what tools or processes are used in the future to build UI templates, the final data source must be formatted
+        into this exact JSON structure for the application to function.
+      </p>
+      <p class="text-gray-700 mb-6">The data must be a JSON array of objects.</p>
+
+      <h4 class="text-xl font-semibold text-gray-800 mb-3">JSON Format & Required Fields</h4>
+      <p class="text-gray-700 mb-4">Each object in the JSON array must contain the following keys/columns:</p>
+
+      <div class="bg-gray-800 rounded-lg p-4 mb-6 overflow-x-auto">
+        <pre class="text-gray-100 text-sm font-mono"><code>[
+  {
+    "Inquiry": "Category Name",
+    "Secondary Category": "Sub-Category Name",
+    "Scenario": "Specific Context",
+    "Short Summary": "Brief description of the response",
+    "Decision Code": "Unique Short Code. E.g: AECNR",
+    "Verbiage": "The actual text response.",
+    "Coded By": "pdr or user"
+  }
+]</code></pre>
+      </div>
+
+      <h4 class="text-xl font-semibold text-gray-800 mb-3">Column Descriptions</h4>
+      <ul class="space-y-3 text-gray-700">
+        <li class="flex items-start">
+          <span class="text-blue-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
+          <div><strong><code>Inquiry</code></strong>: (Required) The top-level category or topic. This field dynamically
+            generates the main navigation tabs at the top of the application. Everything with the same Inquiry value
+            will be grouped under the same tab. (e.g., "Account Issue", "Billing").</div>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
+          <div><strong><code>Secondary Category</code></strong>: (Required) A further breakdown or sub-category to help
+            organize scenarios under a main Inquiry topic.</div>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
+          <div><strong><code>Scenario</code></strong>: (Required) The specific situation or context where this
+            particular verbiage is used.</div>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
+          <div><strong><code>Short Summary</code></strong>: (Required) A quick reference or title for the verbiage. This
+            makes it easier for agents to scan through search results without reading the entire block of text.</div>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
+          <div><strong><code>Decision Code</code></strong>: (Required) A code representing the short code of the
+            verbiage. (e.g., "AECNR").</div>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
+          <div><strong><code>Verbiage</code></strong>: (Required) The actual textual response that the agent will use.
+            See <em>Verbiage Formatting Rules</em> below for making parts editable.</div>
+        </li>
+        <li class="flex items-start">
+          <span class="text-blue-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
+          <div>
+            <strong><code>Coded By</code></strong>: (Required) Defines the source of the verbiage. This powers the
+            filter toggles in the UI.
+            <ul class="list-disc ml-6 mt-2 text-gray-600">
+              <li>Using the exact string <code>"pdr"</code> indicates this is an official/approved template.</li>
+              <li>Leaving it blank or setting it to anything else signifies it is a "Custom Verbiage" created by users.
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-8">
+      <h3 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2"><i class="fas fa-filter text-purple-500 mr-2"></i>
+        How the Filters Work</h3>
+      <p class="text-gray-700 mb-4">The UI features a toggle switch with two options:</p>
+      <div class="space-y-4">
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+          <h4 class="font-bold text-gray-800 flex items-center gap-2"><i class="fas fa-toggle-off text-gray-400"></i>
+            PDR + Custom Verbiage</h4>
+          <p class="text-gray-600 text-sm mt-1">Shows all data in the JSON array, regardless of the
+            <code>Coded By</code> value.</p>
+        </div>
+        <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
+          <h4 class="font-bold text-purple-900 flex items-center gap-2"><i class="fas fa-toggle-on text-purple-600"></i>
+            Only PDR Verbiage</h4>
+          <p class="text-purple-800 text-sm mt-1">Filters the JSON array to show <em>only</em> records where the
+            <code>Coded By</code> field is explicitly set to <code>"pdr"</code> (case-insensitive).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-8">
+      <h3 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2"><i class="fas fa-edit text-green-500 mr-2"></i>
+        Verbiage Formatting Rules</h3>
+      <p class="text-gray-700 mb-4">
+        Verbiage Assist can automatically turn specific placeholders in the <code>Verbiage</code> text into interactive,
+        editable input fields in the UI. This allows agents to tweak variables directly in the app before copying.
+      </p>
+
+      <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+        <p class="text-yellow-800 font-medium">To create an editable field, wrap the placeholder text in parentheses
+          <code>()</code>, square brackets <code>[]</code>, or curly braces <code>{}</code> AND place an asterisk
+          <code>*</code> immediately after the opening bracket.</p>
+      </div>
+
+      <p class="text-gray-700 mb-6">The asterisk acts as a strict identifier, ensuring the app doesn't accidentally turn
+        normal abbreviations like <code>(AD)</code> or <code>(s)</code> into editable fields.</p>
+
+      <h4 class="text-lg font-bold text-gray-800 mb-2">Example Data Entry:</h4>
+      <div class="bg-gray-800 rounded-lg p-4 mb-6 overflow-x-auto">
+        <code
+          class="text-green-400 text-sm font-mono">"Verbiage": "Hello [*Customer Name], your request for (*Object Name) has been {*Approval Status}."</code>
+      </div>
+
+      <h4 class="text-lg font-bold text-gray-800 mb-3">How it works in the UI:</h4>
+      <ul class="list-disc ml-5 space-y-2 text-gray-700">
+        <li>The brackets themselves (<code>[ ]</code>, <code>( )</code>, <code>{ }</code>) remain locked and cannot be
+          accidentally deleted by the user.</li>
+        <li>The <code>*</code> is hidden from the user.</li>
+        <li>The text inside (e.g., <span
+            class="bg-yellow-100 text-yellow-800 px-1 rounded border border-yellow-200">Customer Name</span>) visually
+          renders as highlighted, editable text boxes.</li>
+      </ul>
+
+      <p class="text-gray-500 text-sm italic mt-6 mt-4 pt-4 border-t">
+        Note: Regular text like <code>Annual Day (AD)</code> or <code>document(s)</code> will just render normally since
+        they lack the <code>*</code> trigger.
+      </p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 mt-auto">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-400">
+      <p>Developed and Coded by <span class="font-medium text-white">Nishant Singh</span> | 2024</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

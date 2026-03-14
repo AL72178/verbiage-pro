@@ -103,10 +103,9 @@ function renderTable(data) {
   tableBody.innerHTML = "";
   data.forEach((item) => {
     const verbiageHTML = item["Verbiage"].replace(
-      /([\[\(\{])([^{}\[\]\(\)]+?)([\]\)\}])/g,
+      /([\[\(\{])\*([^{}\[\]\(\)]+?)([\]\)\}])/g,
       (match, open, content, close) => {
-        if (open === "(" && content === "s" && close === ")") return match;
-        return `<span contenteditable="true" class="editable-bracket">${open}${content}${close}</span>`;
+        return `${open}<span contenteditable="true" class="editable-bracket px-1 mx-1 border-b border-dashed border-blue-400 text-blue-600 focus:outline-none focus:bg-blue-50">${content}</span>${close}`;
       }
     );
 
@@ -300,7 +299,7 @@ paginationContainer.addEventListener("click", (e) => {
 
 // --- Load Data ---
 
-fetch("newData.json")
+fetch("./data/Data.json")
   .then((response) => response.json())
   .then((data) => {
     if (!Array.isArray(data)) throw new Error("Invalid data format");
