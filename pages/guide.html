@@ -1,204 +1,521 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Use & Manage Data - Verbiage Assist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Use & Manage Data - Verbiage Pro</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    /* Custom Scrollbar for better aesthetics */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
 
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
+      ::-webkit-scrollbar-track {
+        background: #e2e8f0;
+      }
 
-    ::-webkit-scrollbar-thumb {
-      background: #cbd5e1;
-      border-radius: 4px;
-    }
+      ::-webkit-scrollbar-thumb {
+        background: #94a3b8;
+        border-radius: 999px;
+      }
 
-    ::-webkit-scrollbar-thumb:hover {
-      background: #94a3b8;
-    }
-  </style>
-</head>
+      ::-webkit-scrollbar-thumb:hover {
+        background: #64748b;
+      }
 
-<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed flex flex-col min-h-screen">
+      .guide-shell {
+        background:
+          radial-gradient(circle at top left, rgba(191, 219, 254, 0.65), transparent 28%),
+          radial-gradient(circle at top right, rgba(165, 243, 252, 0.55), transparent 22%),
+          linear-gradient(180deg, #eff6ff 0%, #f8fafc 22%, #f8fafc 100%);
+      }
 
-  <!-- Header -->
-  <header class="bg-white border-b sticky top-0 z-10 shadow-sm">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <i class="fas fa-book-open text-blue-600 text-xl"></i>
-        <h1 class="text-xl font-bold text-gray-900">Verbiage Pro Guide</h1>
+      .section-anchor {
+        scroll-margin-top: 5.5rem;
+      }
+
+      .hero-grid::before {
+        content: "";
+        position: absolute;
+        inset: auto -10% -25% auto;
+        width: 18rem;
+        height: 18rem;
+        border-radius: 999px;
+        background: rgba(34, 211, 238, 0.18);
+        filter: blur(20px);
+      }
+    </style>
+  </head>
+
+  <body class="guide-shell text-slate-800 font-sans leading-relaxed flex flex-col min-h-screen">
+    <header class="sticky top-0 z-20 border-b border-slate-200 bg-white/90 shadow-sm backdrop-blur">
+      <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-2">
+          <i class="fas fa-book-open text-blue-600 text-xl"></i>
+          <h1 class="text-xl font-bold text-slate-900">Verbiage Assist Guide</h1>
+        </div>
+        <div class="flex items-center gap-3">
+          <a
+            href="#submit-your-own-verbiage"
+            class="hidden rounded-full border border-amber-200 bg-amber-50 px-3 py-1.5 text-sm font-semibold text-amber-900 transition-colors hover:bg-amber-100 sm:inline-flex"
+            >Request Custom Verbiage</a
+          >
+          <a
+            href="../index.html"
+            class="inline-flex items-center gap-1 text-sm font-medium text-blue-600 transition-colors hover:text-blue-800"
+            ><i class="fas fa-arrow-left"></i> Back to App</a
+          >
+        </div>
       </div>
-      <a href="index.html"
-        class="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1">
-        <i class="fas fa-arrow-left"></i> Back to App
-      </a>
-    </div>
-  </header>
+    </header>
 
-  <!-- Main Content -->
-  <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-10 max-w-4xl">
+    <main class="mx-auto flex w-full max-w-6xl flex-grow flex-col gap-8 px-4 py-10 sm:px-6 lg:px-8">
+      <section class="hero-grid relative overflow-hidden rounded-[2rem] bg-slate-900 text-white shadow-xl">
+        <div class="relative grid gap-8 p-8 md:p-10 lg:grid-cols-[1.35fr,0.9fr]">
+          <div>
+            <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-sm font-semibold text-cyan-100">
+              <i class="fas fa-circle-info text-cyan-300"></i> Guide, data reference, and request help
+            </span>
+            <h2 class="mt-5 max-w-2xl text-4xl font-black tracking-tight text-white sm:text-5xl">
+              Search faster, clean up text, and request new verbiage without guesswork.
+            </h2>
+            <p class="mt-4 max-w-2xl text-lg text-slate-200">
+              Verbiage Assist helps agents find, edit, copy, and break provider-letter verbiage from one shared
+              library. It also supports editable placeholders and abbreviation expansion inside Letter Break.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a
+                href="#quick-start"
+                class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 transition-transform hover:-translate-y-0.5"
+                ><i class="fas fa-bolt text-blue-600"></i> Quick Start</a
+              >
+              <a
+                href="#submit-your-own-verbiage"
+                class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/20"
+                ><i class="fas fa-envelope"></i> Request New Verbiage</a
+              >
+            </div>
+          </div>
 
-    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-8">
-      <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Verbiage Assist Documentation</h2>
-      <p class="text-lg text-gray-600 mb-6">
-        Verbiage Assist is a tool designed to easily retrieve, search, copy, and modify Provider Letter verbiage. It
-        uses a clean UI to display official and custom verbiage templates, allowing agents to quickly adjust parameters
-        and copy responses into their workflow.
-      </p>
-    </div>
+          <div class="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-lg backdrop-blur">
+            <div class="inline-flex items-center gap-2 rounded-full bg-amber-400/20 px-3 py-1 text-sm font-semibold text-amber-100">
+              <i class="fas fa-wand-magic-sparkles text-amber-300"></i> New request option
+            </div>
+            <h3 class="mt-4 text-2xl font-bold text-white">Need something that is not in the library yet?</h3>
+            <p class="mt-3 text-sm text-slate-200">
+              You do not have to stop at the existing templates. If the wording you need is missing, you can request a
+              new custom verbiage entry directly from this guide.
+            </p>
+            <div class="mt-5 space-y-3 text-sm text-slate-100">
+              <div class="flex items-start gap-3">
+                <span class="mt-1 text-cyan-300"><i class="fas fa-check-circle"></i></span>
+                <p>Use the request template at the bottom of this page.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="mt-1 text-cyan-300"><i class="fas fa-check-circle"></i></span>
+                <p>Include the exact scenario, short summary, and final verbiage you want added.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="mt-1 text-cyan-300"><i class="fas fa-check-circle"></i></span>
+                <p>Jump there any time with the request button in the header or below.</p>
+              </div>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a
+                href="#submit-your-own-verbiage"
+                class="inline-flex items-center gap-2 rounded-full bg-amber-300 px-4 py-2 text-sm font-semibold text-slate-900 transition-transform hover:-translate-y-0.5"
+                ><i class="fas fa-arrow-down"></i> Jump to Request Format</a
+              >
+              <a
+                href="mailto:nishant.singh@carelon.com"
+                class="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                ><i class="fas fa-paper-plane"></i> Email Directly</a
+              >
+            </div>
+          </div>
+        </div>
 
-    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-8">
-      <h3 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2"><i class="fas fa-database text-blue-500 mr-2"></i>
-        Managing Data (<code>Data.json</code>)</h3>
-      <p class="text-gray-700 mb-4">
-        Currently, all the data for Verbiage Assist is stored statically within <code>./js/Data.json</code>. Regardless
-        of what tools or processes are used in the future to build UI templates, the final data source must be formatted
-        into this exact JSON structure for the application to function.
-      </p>
-      <p class="text-gray-700 mb-6">The data must be a JSON array of objects.</p>
+        <div class="relative grid gap-4 px-8 pb-8 md:grid-cols-3">
+          <div class="rounded-2xl border border-white/10 bg-white/10 p-5">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200">Library Tools</p>
+            <p class="mt-2 text-sm text-slate-200">
+              Dynamic tabs, search, PDR filtering, copy, and break actions are available directly from the main screen.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/10 p-5">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200">Letter Break</p>
+            <p class="mt-2 text-sm text-slate-200">
+              Divide Text chunks long content, while Reset clears both the output and any active abbreviation review.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/10 p-5">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-200">Apply Abbrev</p>
+            <p class="mt-2 text-sm text-slate-200">
+              First mentions expand, repeats wrap, and ambiguous terms show clickable choices before you finalize text.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <h4 class="text-xl font-semibold text-gray-800 mb-3">JSON Format & Required Fields</h4>
-      <p class="text-gray-700 mb-4">Each object in the JSON array must contain the following keys/columns:</p>
+      <section id="quick-start" class="section-anchor rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+        <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Quick Start</p>
+            <h3 class="mt-2 text-3xl font-black text-slate-900">How most visitors will use the app</h3>
+          </div>
+          <p class="max-w-2xl text-sm text-slate-600">
+            This gives people the fast path first, while the detailed data and formatting rules stay available below.
+          </p>
+        </div>
 
-      <div class="bg-gray-800 rounded-lg p-4 mb-6 overflow-x-auto">
-        <pre class="text-gray-100 text-sm font-mono"><code>[
+        <div class="mt-8 grid gap-4 lg:grid-cols-3">
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-sm font-bold text-white">1</div>
+            <h4 class="mt-4 text-xl font-bold text-slate-900">Find the closest match</h4>
+            <p class="mt-2 text-sm text-slate-600">
+              Use tabs created from <code>Inquiry</code>, search across the main fields, and narrow the results with the
+              PDR filter when needed.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-600 text-sm font-bold text-white">2</div>
+            <h4 class="mt-4 text-xl font-bold text-slate-900">Edit, break, and polish</h4>
+            <p class="mt-2 text-sm text-slate-600">
+              Update editable placeholders inline, use <code>Break</code> to move text into Letter Break, then run
+              <code>Divide Text</code> or <code>Apply Abbrev</code> as needed.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-amber-200 bg-amber-50 p-6">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-amber-500 text-sm font-bold text-slate-900">3</div>
+            <h4 class="mt-4 text-xl font-bold text-slate-900">Request a new entry if it is missing</h4>
+            <p class="mt-2 text-sm text-slate-700">
+              If the library does not have the right wording, send a custom verbiage request using the format in this
+              guide. That option is always available.
+            </p>
+            <a
+              href="#submit-your-own-verbiage"
+              class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-amber-900 transition-colors hover:text-amber-700"
+              ><i class="fas fa-arrow-right"></i> Go to the request section</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section-anchor rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+        <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-600">Current Website Features</p>
+            <h3 class="mt-2 text-3xl font-black text-slate-900">What the current app supports</h3>
+          </div>
+          <p class="max-w-2xl text-sm text-slate-600">
+            These are the behaviors that are live in the current UI, including the newer abbreviation review flow.
+          </p>
+        </div>
+
+        <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <p class="font-semibold text-slate-900">Navigation and Search</p>
+            <p class="mt-2 text-sm text-slate-600">
+              Tabs are generated from <code>Inquiry</code>. Search checks <code>Inquiry</code>,
+              <code>Secondary Category</code>, <code>Scenario</code>, <code>Decision Code</code>,
+              <code>Short Summary</code>, and <code>Verbiage</code>.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <p class="font-semibold text-slate-900">PDR Filter</p>
+            <p class="mt-2 text-sm text-slate-600">
+              <strong>PDR + Custom Verbiage</strong> shows everything. <strong>Only PDR Verbiage</strong> shows only
+              rows where <code>Coded By</code> is <code>pdr</code>, ignoring case.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <p class="font-semibold text-slate-900">Row Actions</p>
+            <p class="mt-2 text-sm text-slate-600">
+              <strong>Copy</strong> copies the selected row text. <strong>Break</strong> sends that row into Letter
+              Break and starts chunking immediately.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <p class="font-semibold text-slate-900">Abbreviation Review</p>
+            <p class="mt-2 text-sm text-slate-600">
+              Apply Abbrev shows a status panel while processing, then explains what changed or asks the user to choose a
+              meaning when a term is ambiguous.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="data-format" class="section-anchor rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+        <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Data Structure</p>
+            <h3 class="mt-2 text-3xl font-black text-slate-900">Managing Data in <code>data/Data.json</code></h3>
+          </div>
+          <p class="max-w-2xl text-sm text-slate-600">
+            The main verbiage library is stored in <code>data/Data.json</code>. The app expects a JSON array using the
+            structure below.
+          </p>
+        </div>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-[1.05fr,0.95fr]">
+          <div class="overflow-hidden rounded-3xl bg-slate-900 shadow-lg">
+            <div class="border-b border-white/10 px-5 py-4 text-sm font-semibold text-slate-200">
+              Required JSON structure
+            </div>
+            <div class="overflow-x-auto p-5">
+              <pre class="text-sm font-mono text-slate-100"><code>[
   {
     "Inquiry": "Category Name",
     "Secondary Category": "Sub-Category Name",
     "Scenario": "Specific Context",
     "Short Summary": "Brief description of the response",
-    "Decision Code": "Unique Short Code. E.g: AECNR",
-    "Verbiage": "The actual text response.",
+    "Decision Code": "Unique Short Code. E.g. AECNR",
+    "Verbiage": "The actual response text.",
     "Coded By": "pdr or user"
   }
 ]</code></pre>
-      </div>
-
-      <h4 class="text-xl font-semibold text-gray-800 mb-3">Column Descriptions</h4>
-      <ul class="space-y-3 text-gray-700">
-        <li class="flex items-start">
-          <span class="text-blue-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
-          <div><strong><code>Inquiry</code></strong>: (Required) The top-level category or topic. This field dynamically
-            generates the main navigation tabs at the top of the application. Everything with the same Inquiry value
-            will be grouped under the same tab. (e.g., "Account Issue", "Billing").</div>
-        </li>
-        <li class="flex items-start">
-          <span class="text-blue-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
-          <div><strong><code>Secondary Category</code></strong>: (Required) A further breakdown or sub-category to help
-            organize scenarios under a main Inquiry topic.</div>
-        </li>
-        <li class="flex items-start">
-          <span class="text-blue-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
-          <div><strong><code>Scenario</code></strong>: (Required) The specific situation or context where this
-            particular verbiage is used.</div>
-        </li>
-        <li class="flex items-start">
-          <span class="text-blue-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
-          <div><strong><code>Short Summary</code></strong>: (Required) A quick reference or title for the verbiage. This
-            makes it easier for agents to scan through search results without reading the entire block of text.</div>
-        </li>
-        <li class="flex items-start">
-          <span class="text-blue-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
-          <div><strong><code>Decision Code</code></strong>: (Required) A code representing the short code of the
-            verbiage. (e.g., "AECNR").</div>
-        </li>
-        <li class="flex items-start">
-          <span class="text-blue-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
-          <div><strong><code>Verbiage</code></strong>: (Required) The actual textual response that the agent will use.
-            See <em>Verbiage Formatting Rules</em> below for making parts editable.</div>
-        </li>
-        <li class="flex items-start">
-          <span class="text-blue-500 mt-1 mr-2"><i class="fas fa-check-circle"></i></span>
-          <div>
-            <strong><code>Coded By</code></strong>: (Required) Defines the source of the verbiage. This powers the
-            filter toggles in the UI.
-            <ul class="list-disc ml-6 mt-2 text-gray-600">
-              <li>Using the exact string <code>"pdr"</code> indicates this is an official/approved template.</li>
-              <li>Leaving it blank or setting it to anything else signifies it is a "Custom Verbiage" created by users.
-              </li>
-            </ul>
+            </div>
           </div>
-        </li>
-      </ul>
-    </div>
 
-    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-8">
-      <h3 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2"><i class="fas fa-filter text-purple-500 mr-2"></i>
-        How the Filters Work</h3>
-      <p class="text-gray-700 mb-4">The UI features a toggle switch with two options:</p>
-      <div class="space-y-4">
-        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
-          <h4 class="font-bold text-gray-800 flex items-center gap-2"><i class="fas fa-toggle-off text-gray-400"></i>
-            PDR + Custom Verbiage</h4>
-          <p class="text-gray-600 text-sm mt-1">Shows all data in the JSON array, regardless of the
-            <code>Coded By</code> value.</p>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <p class="font-semibold text-slate-900"><code>Inquiry</code></p>
+              <p class="mt-2 text-sm text-slate-600">Top-level category. This creates the tabs shown in the app.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <p class="font-semibold text-slate-900"><code>Secondary Category</code></p>
+              <p class="mt-2 text-sm text-slate-600">Second level grouping inside the main inquiry.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <p class="font-semibold text-slate-900"><code>Scenario</code></p>
+              <p class="mt-2 text-sm text-slate-600">The exact use case for the response.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <p class="font-semibold text-slate-900"><code>Short Summary</code></p>
+              <p class="mt-2 text-sm text-slate-600">A quick description users can scan in the table.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <p class="font-semibold text-slate-900"><code>Decision Code</code></p>
+              <p class="mt-2 text-sm text-slate-600">Short reference code shown for the entry.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <p class="font-semibold text-slate-900"><code>Verbiage</code></p>
+              <p class="mt-2 text-sm text-slate-600">The response text itself. This can include editable placeholders.</p>
+            </div>
+            <div class="rounded-2xl border border-blue-100 bg-blue-50 p-5 sm:col-span-2">
+              <p class="font-semibold text-slate-900"><code>Coded By</code></p>
+              <p class="mt-2 text-sm text-slate-700">
+                Use <code>pdr</code> for official templates. Any other value, or leaving it blank, is treated as custom
+                verbiage.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
-          <h4 class="font-bold text-purple-900 flex items-center gap-2"><i class="fas fa-toggle-on text-purple-600"></i>
-            Only PDR Verbiage</h4>
-          <p class="text-purple-800 text-sm mt-1">Filters the JSON array to show <em>only</em> records where the
-            <code>Coded By</code> field is explicitly set to <code>"pdr"</code> (case-insensitive).</p>
+      </section>
+
+      <section id="placeholders" class="section-anchor rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+        <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-600">Editable Fields</p>
+            <h3 class="mt-2 text-3xl font-black text-slate-900">Verbiage formatting rules</h3>
+          </div>
+          <p class="max-w-2xl text-sm text-slate-600">
+            Editable placeholders let agents personalize text directly in the table without removing the surrounding
+            brackets.
+          </p>
         </div>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-[0.9fr,1.1fr]">
+          <div class="rounded-3xl border border-emerald-200 bg-emerald-50 p-6">
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">Rule</p>
+            <h4 class="mt-2 text-2xl font-bold text-slate-900">Place <code>*</code> right after the opening bracket.</h4>
+            <p class="mt-3 text-sm text-slate-700">
+              The current renderer supports all three bracket styles: <code>[]</code>, <code>()</code>, and
+              <code>{}</code>.
+            </p>
+            <div class="mt-5 rounded-2xl border border-emerald-200 bg-white p-4 text-sm text-slate-700">
+              <p><strong>Examples</strong></p>
+              <p class="mt-2"><code>[*Customer Name]</code></p>
+              <p><code>(*Object Name)</code></p>
+              <p><code>{*Approval Status}</code></p>
+            </div>
+          </div>
+
+          <div>
+            <div class="overflow-hidden rounded-3xl bg-slate-900 shadow-lg">
+              <div class="border-b border-white/10 px-5 py-4 text-sm font-semibold text-slate-200">Example verbiage</div>
+              <div class="overflow-x-auto p-5">
+                <code class="text-sm font-mono text-emerald-300"
+                  >"Verbiage": "Hello [*Customer Name], your request for (*Object Name) has been {*Approval Status}."</code
+                >
+              </div>
+            </div>
+
+            <div class="mt-4 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <p class="font-semibold text-slate-900">What stays visible</p>
+                <p class="mt-2 text-sm text-slate-600">The brackets remain visible and help protect the structure.</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <p class="font-semibold text-slate-900">What becomes editable</p>
+                <p class="mt-2 text-sm text-slate-600">The text after the <code>*</code> becomes editable in the UI.</p>
+              </div>
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:col-span-2">
+                <p class="font-semibold text-slate-900">What does not change</p>
+                <p class="mt-2 text-sm text-slate-600">
+                  Normal text such as <code>(EOB)</code>, <code>(AD)</code>, or <code>document(s)</code> stays untouched
+                  because it does not contain the <code>*</code> marker.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="letter-break" class="section-anchor rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+        <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-purple-600">Letter Break Workflow</p>
+            <h3 class="mt-2 text-3xl font-black text-slate-900">Letter Break and Apply Abbrev</h3>
+          </div>
+          <p class="max-w-2xl text-sm text-slate-600">
+            Use this area for final cleanup, copy-ready chunks, and abbreviation formatting before you send or paste the
+            final text.
+          </p>
+        </div>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-2">
+          <div class="rounded-3xl border border-purple-100 bg-purple-50 p-6">
+            <div class="flex items-center gap-3">
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-purple-600 text-white">
+                <i class="fas fa-scissors"></i>
+              </span>
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.16em] text-purple-700">Letter Break</p>
+                <h4 class="text-2xl font-bold text-slate-900">Chunk and reset text fast</h4>
+              </div>
+            </div>
+            <div class="mt-5 space-y-3 text-sm text-slate-700">
+              <p><code>Divide Text</code> splits content into 63-character chunks without breaking words when possible.</p>
+              <p><code>Reset</code> clears the textarea, generated output boxes, and any active abbreviation review state.</p>
+              <p>The row-level <code>Break</code> button sends selected table verbiage into Letter Break automatically.</p>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-cyan-100 bg-cyan-50 p-6">
+            <div class="flex items-center gap-3">
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-cyan-600 text-white">
+                <i class="fas fa-wand-magic-sparkles"></i>
+              </span>
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.16em] text-cyan-700">Apply Abbrev</p>
+                <h4 class="text-2xl font-bold text-slate-900">Expand first mentions and review ambiguous terms</h4>
+              </div>
+            </div>
+            <div class="mt-5 space-y-3 text-sm text-slate-700">
+              <p><code>Apply Abbrev</code> checks the Letter Break text against <code>data/Abbreviation.json</code>.</p>
+              <p>If a term has one meaning, the first occurrence becomes <code>Full Form (ABBR)</code>.</p>
+              <p>Later occurrences become <code>(ABBR)</code> if they are not already wrapped.</p>
+              <p>Terms with special characters, such as <code>E/M</code>, are supported.</p>
+              <p>If the text already contains <code>Full Form (ABBR)</code>, that expansion is preserved and later repeats are wrapped.</p>
+              <p>If a term has multiple meanings, the app shows clickable options so the user can choose the correct one.</p>
+              <p>A status panel appears while processing and after completion so users can review what changed.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 overflow-hidden rounded-3xl bg-slate-900 shadow-lg">
+          <div class="border-b border-white/10 px-5 py-4 text-sm font-semibold text-slate-200">
+            Abbreviation file format in <code>data/Abbreviation.json</code>
+          </div>
+          <div class="grid gap-6 p-5 lg:grid-cols-[0.95fr,1.05fr]">
+            <div class="overflow-x-auto">
+              <pre class="text-sm font-mono text-slate-100"><code>[
+  {
+    "Term": "CMS",
+    "Definition": "Centers for Medicare & Medicaid Services",
+    "Definition 2": "Claims Management System",
+    "Definition 3": ""
+  }
+]</code></pre>
+            </div>
+            <div class="space-y-3 text-sm text-slate-200">
+              <p>Use <code>Term</code> for the abbreviation itself.</p>
+              <p>Use <code>Definition</code>, <code>Definition 2</code>, and <code>Definition 3</code> for possible meanings.</p>
+              <p>Leave unused definition fields blank.</p>
+              <p>If more than one unique definition is present, the app shows manual selection choices during review.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="submit-your-own-verbiage"
+        class="section-anchor overflow-hidden rounded-3xl border border-amber-200 bg-white shadow-sm">
+        <div class="grid gap-0 lg:grid-cols-[0.9fr,1.1fr]">
+          <div class="bg-gradient-to-br from-amber-100 via-amber-50 to-white p-8">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-amber-700">Custom Request Option</p>
+            <h3 class="mt-2 text-3xl font-black text-slate-900">Submit your own verbiage</h3>
+            <p class="mt-4 text-sm text-slate-700">
+              If the library does not already have the wording you need, send a request to
+              <a href="mailto:nishant.singh@carelon.com" class="font-semibold text-blue-700 underline underline-offset-2"
+                >nishant.singh@carelon.com</a
+              >.
+            </p>
+            <div class="mt-6 rounded-2xl border border-amber-200 bg-white p-5 text-sm text-slate-700">
+              <p class="font-semibold text-slate-900">What to include</p>
+              <p class="mt-3">The goal is to make the request easy to review and easy to convert into <code>data/Data.json</code>.</p>
+              <p class="mt-3"><code>Inquiry</code> is the top-level category used to create tabs in the app.</p>
+              <p class="mt-2">Include <code>Secondary Category</code> if the new entry should appear under a specific subgroup.</p>
+              <p class="mt-2">If the verbiage needs editable fields, use <code>[*Field Name]</code>, <code>(*Field Name)</code>, or <code>{*Field Name}</code>.</p>
+              <p class="mt-2">If a new abbreviation is needed too, include the abbreviation and its full form in <code>Reason / Notes</code>.</p>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a
+                href="mailto:nishant.singh@carelon.com"
+                class="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+                ><i class="fas fa-paper-plane"></i> Send Email</a
+              >
+              <a
+                href="../index.html"
+                class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100"
+                ><i class="fas fa-arrow-left"></i> Back to App</a
+              >
+            </div>
+          </div>
+
+          <div class="bg-slate-950 p-8 text-slate-100">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-amber-300">Email Template</p>
+            <h4 class="mt-2 text-2xl font-bold text-white">Use this format</h4>
+            <div class="mt-5 overflow-x-auto rounded-2xl border border-white/10 bg-black/20 p-5">
+              <pre class="text-sm font-mono text-slate-100"><code>Subject: Verbiage Request - [Inquiry] - [Short Summary]
+
+Inquiry (Category):
+Secondary Category:
+Scenario:
+Short Summary:
+Decision Code:
+Verbiage:
+Coded By: user
+Reason / Notes:</code></pre>
+            </div>
+            <p class="mt-5 text-sm text-slate-300">
+              This format mirrors the app data fields, so it is easier to add the new entry correctly the first time.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mt-auto bg-slate-900 py-6 text-white">
+      <div class="mx-auto px-4 text-center text-sm text-slate-400 sm:px-6 lg:max-w-6xl lg:px-8">
+        <p>Developed and Coded by <span class="font-medium text-white">Nishant Singh</span> | 2024</p>
       </div>
-    </div>
-
-    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-8">
-      <h3 class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2"><i class="fas fa-edit text-green-500 mr-2"></i>
-        Verbiage Formatting Rules</h3>
-      <p class="text-gray-700 mb-4">
-        Verbiage Assist can automatically turn specific placeholders in the <code>Verbiage</code> text into interactive,
-        editable input fields in the UI. This allows agents to tweak variables directly in the app before copying.
-      </p>
-
-      <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-        <p class="text-yellow-800 font-medium">To create an editable field, wrap the placeholder text in parentheses
-          <code>()</code>, square brackets <code>[]</code>, or curly braces <code>{}</code> AND place an asterisk
-          <code>*</code> immediately after the opening bracket.</p>
-      </div>
-
-      <p class="text-gray-700 mb-6">The asterisk acts as a strict identifier, ensuring the app doesn't accidentally turn
-        normal abbreviations like <code>(AD)</code> or <code>(s)</code> into editable fields.</p>
-
-      <h4 class="text-lg font-bold text-gray-800 mb-2">Example Data Entry:</h4>
-      <div class="bg-gray-800 rounded-lg p-4 mb-6 overflow-x-auto">
-        <code
-          class="text-green-400 text-sm font-mono">"Verbiage": "Hello [*Customer Name], your request for (*Object Name) has been {*Approval Status}."</code>
-      </div>
-
-      <h4 class="text-lg font-bold text-gray-800 mb-3">How it works in the UI:</h4>
-      <ul class="list-disc ml-5 space-y-2 text-gray-700">
-        <li>The brackets themselves (<code>[ ]</code>, <code>( )</code>, <code>{ }</code>) remain locked and cannot be
-          accidentally deleted by the user.</li>
-        <li>The <code>*</code> is hidden from the user.</li>
-        <li>The text inside (e.g., <span
-            class="bg-yellow-100 text-yellow-800 px-1 rounded border border-yellow-200">Customer Name</span>) visually
-          renders as highlighted, editable text boxes.</li>
-      </ul>
-
-      <p class="text-gray-500 text-sm italic mt-6 mt-4 pt-4 border-t">
-        Note: Regular text like <code>Annual Day (AD)</code> or <code>document(s)</code> will just render normally since
-        they lack the <code>*</code> trigger.
-      </p>
-    </div>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6 mt-auto">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-400">
-      <p>Developed and Coded by <span class="font-medium text-white">Nishant Singh</span> | 2024</p>
-    </div>
-  </footer>
-
-</body>
-
+    </footer>
+  </body>
 </html>

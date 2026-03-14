@@ -1,16 +1,27 @@
 # Verbiage Assist
 
-Verbiage Assist is a tool designed to easily retrieve, search, copy, and modify Provider Letter verbiage. It uses a clean UI to display official and custom verbiage templates, allowing agents to quickly adjust parameters and copy responses into their workflow.
+Verbiage Assist helps agents quickly find, edit, copy, and break provider-letter verbiage from a shared library. The app supports both official PDR templates and custom verbiage, and it now includes abbreviation expansion inside the Letter Break workflow.
 
-## Managing Data (`Data.json`)
+## Current Website Features
 
-Currently, all the data for Verbiage Assist is stored statically within `./js/Data.json`. Regardless of what tools or processes are used in the future to build UI templates, the final data source must be formatted into this exact JSON structure for the application to function.
+- Dynamic tabs generated from the `Inquiry` field in the data file
+- Search across `Inquiry`, `Secondary Category`, `Scenario`, `Decision Code`, `Short Summary`, and `Verbiage`
+- Filters for `PDR + Custom Verbiage` and `Only PDR Verbiage`
+- `Copy` action for any row
+- `Break` action that sends the selected verbiage into Letter Break
+- Editable placeholders inside verbiage rows
+- Letter Break chunking for copy-friendly text segments
+- `Apply Abbrev` support powered by `data/Abbreviation.json`
+- Abbreviation status cards with clickable choices when a term has more than one meaning
 
-The data must be a JSON array of objects.
+## Data Files
 
-### JSON Format & Required Fields
+- `data/Data.json`: main verbiage library used by the table
+- `data/Abbreviation.json`: abbreviation library used by `Apply Abbrev`
 
-Each object in the JSON array must contain the following keys/columns:
+## Verbiage Data Structure
+
+All table data must be stored as a JSON array inside `data/Data.json`.
 
 ```json
 [
@@ -19,47 +30,118 @@ Each object in the JSON array must contain the following keys/columns:
     "Secondary Category": "Sub-Category Name",
     "Scenario": "Specific Context",
     "Short Summary": "Brief description of the response",
-    "Decision Code": "Unique Short Code. E.g: AECNR",
-    "Verbiage": "The actual text response.",
+    "Decision Code": "Unique Short Code. E.g. AECNR",
+    "Verbiage": "The actual response text.",
     "Coded By": "pdr or user"
   }
 ]
 ```
 
-#### Column Descriptions
+### Field Definitions
 
-- **`Inquiry`**: (Required) The top-level category or topic. This field dynamically generates the main navigation tabs at the top of the application. Everything with the same Inquiry value will be grouped under the same tab. (e.g., "Account Issue", "Billing").
-- **`Secondary Category`**: (Required) A further breakdown or sub-category to help organize scenarios under a main Inquiry topic.
-- **`Scenario`**: (Required) The specific situation or context where this particular verbiage is used.
-- **`Short Summary`**: (Required) A quick reference or title for the verbiage. This makes it easier for agents to scan through search results without reading the entire block of text.
-- **`Decision Code`**: (Required) A code representing the short code of the verbiage. (e.g., "AECNR"). 
-- **`Verbiage`**: (Required) The actual textual response that the agent will use. See *Verbiage Formatting Rules* below for making parts editable.
-- **`Coded By`**: (Required) Defines the source of the verbiage. This powers the filter toggles in the UI. 
-  - Using the exact string `"pdr"` indicates this is an official/approved template. 
-  - Leaving it blank or setting it to anything else signifies it is a "Custom Verbiage" created by users.
+- `Inquiry`: Top-level category. This creates the tabs shown at the top of the app.
+- `Secondary Category`: Smaller grouping under the main inquiry.
+- `Scenario`: Specific use case for the verbiage.
+- `Short Summary`: Quick explanation shown in the table.
+- `Decision Code`: Short reference code for the verbiage.
+- `Verbiage`: Response text shown to the user. This can include editable placeholders.
+- `Coded By`: Source marker for filtering. Use `pdr` for official templates. Any other value or blank is treated as custom verbiage.
 
-## How the Filters Work
+## How The Website Behaves
 
-The UI features a toggle switch with two options:
-1. **"PDR + Custom Verbiage"**: Shows all data in the JSON array, regardless of the `Coded By` value.
-2. **"Only PDR Verbiage"**: Filters the JSON array to show *only* records where the `Coded By` field is explicitly set to `"pdr"` (case-insensitive).
+### Navigation, Search, and Filters
 
-## Verbiage Formatting Rules
+- Tabs are created automatically from unique `Inquiry` values.
+- Search checks `Inquiry`, `Secondary Category`, `Scenario`, `Decision Code`, `Short Summary`, and `Verbiage`.
+- `PDR + Custom Verbiage` shows everything.
+- `Only PDR Verbiage` shows only rows where `Coded By` is exactly `pdr` ignoring case.
 
-Verbiage Assist can automatically turn specific placeholders in the `Verbiage` text into interactive, editable input fields in the UI. This allows agents to tweak variables directly in the app before copying.
+### Row Actions
 
-To create an editable field, wrap the placeholder text in **parentheses `()`, square brackets `[]`, or curly braces `{}` AND place an asterisk (`*`) immediately after the opening bracket**. 
+- `Copy` copies the verbiage text from the selected row.
+- `Break` sends that row's verbiage into the Letter Break section and immediately divides it into chunks.
 
-The asterisk acts as a strict identifier, ensuring the app doesn't accidentally turn normal abbreviations like `(AD)` or `(s)` into editable fields. 
+### Editable Placeholder Rules
 
-**Example Data Entry:**
+To create editable fields inside the main table, wrap the placeholder in `()`, `[]`, or `{}` and place `*` immediately after the opening bracket.
+
+All three bracket styles are supported by the current renderer.
+
+Example:
+
 ```json
 "Verbiage": "Hello [*Customer Name], your request for (*Object Name) has been {*Approval Status}."
 ```
 
-**How it works in the UI:**
-- The brackets themselves (`[ ]`, `( )`, `{ }`) remain locked and cannot be accidentally deleted by the user.
-- The `*` is hidden from the user.
-- The text inside (e.g., `Customer Name`) visually renders as highlighted, editable text boxes.
+How it works:
 
-*Note: Regular text like `Annual Day (AD)` or `document(s)` will just render normally since they lack the `*` trigger.*
+- The brackets stay visible.
+- The `*` is hidden in the UI.
+- The content inside becomes editable.
+- Normal text like `(AD)` or `document(s)` is not converted because it does not include the `*` marker.
+
+## Letter Break
+
+The Letter Break section is used for final cleanup and copy-ready text preparation.
+
+- `Divide Text` splits the text into 63-character chunks without breaking words when possible.
+- `Reset` clears the Letter Break area, its output boxes, and any active abbreviation review state.
+- The scissors button in the table can send a selected row directly into Letter Break.
+
+## Apply Abbrev
+
+`Apply Abbrev` checks the Letter Break text against `data/Abbreviation.json`.
+
+- If an abbreviation has one full form, the first occurrence becomes `Full Form (ABBR)`.
+- Later occurrences are converted to `(ABBR)` if they are not already wrapped.
+- Terms with special characters such as `E/M` are supported.
+- If the text already contains `Full Form (ABBR)`, the app keeps it and only formats later repeats.
+- If an abbreviation has more than one distinct full form, the app does not guess. It shows clickable options so the user can choose the correct meaning.
+- After the user clicks one option, that selected meaning is applied immediately to the text.
+- A status panel appears during processing and after completion so users can review what changed.
+
+### Abbreviation File Format
+
+Store abbreviations in `data/Abbreviation.json`.
+
+```json
+[
+  {
+    "Term": "CMS",
+    "Definition": "Centers for Medicare & Medicaid Services",
+    "Definition 2": "Claims Management System",
+    "Definition 3": ""
+  }
+]
+```
+
+Notes:
+
+- Use `Term` for the abbreviation itself.
+- Use `Definition`, `Definition 2`, and `Definition 3` for possible meanings.
+- Leave unused definition fields blank.
+- If more than one unique definition is present, the app will show manual selection options during `Apply Abbrev`.
+
+## Submitting Custom Verbiage By Email
+
+To request a new custom verbiage entry, send an email to `nishant.singh@carelon.com` using the format below so the request maps cleanly to the app data fields.
+
+```text
+Subject: Verbiage Request - [Inquiry] - [Short Summary]
+
+Inquiry (Category):
+Secondary Category:
+Scenario:
+Short Summary:
+Decision Code:
+Verbiage:
+Coded By: user
+Reason / Notes:
+```
+
+Recommended notes:
+
+- `Inquiry` is the top-level category field used to create tabs in the app.
+- Include `Secondary Category` if the new entry should appear under a specific subgroup.
+- If the verbiage should contain editable fields, use the placeholder format `[*Field Name]`, `(*Field Name)`, or `{*Field Name}` directly in the `Verbiage`.
+- If the request also needs a new abbreviation, include the abbreviation and its full form in `Reason / Notes`.
