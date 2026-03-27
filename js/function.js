@@ -16,7 +16,7 @@ if (inputTextElement) {
 }
 
 function divideText() {
-  const inputText = inputTextElement.value.trim().replace(/\s+/g, " ");
+  const inputText = sanitizeOutputText(inputTextElement.value).trim().replace(/\s+/g, " ");
   outputBoxesElement.innerHTML = "";
   const CHUNK_SIZE = 63;
   let start = 0;
@@ -88,6 +88,14 @@ function copyText(textElement) {
   textElement.setSelectionRange(0, 99999);
   document.execCommand("copy");
   showCopiedMessage();
+}
+
+function sanitizeOutputText(text) {
+  return text
+    .replace(/\bedit\b/gi, " ")
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .replace(/\(\s*\)/g, "")
+    .replace(/\s{2,}/g, " ");
 }
 
 function showCopiedMessage() {
@@ -190,7 +198,9 @@ function processAbbreviationText(text, abbreviations) {
     text,
     changed: false,
     expandedCount: 0,
+    normalizedCount: 0,
     wrappedCount: 0,
+    removedEditCount: 0,
     expandedTerms: [],
     wrappedTerms: new Map(),
     ambiguousTerms: [],
@@ -221,7 +231,14 @@ function processAbbreviationText(text, abbreviations) {
     result.text = applyDefinitionRule(result.text, term, definitions[0], result);
   });
 
-  if (result.expandedCount > 0 || result.wrappedCount > 0) {
+  result.removedEditCount = countStandaloneWordOccurrences(result.text, "edit");
+  result.text = sanitizeOutputText(result.text);
+
+  if (result.removedEditCount > 0) {
+    result.changed = true;
+  }
+
+  if (result.expandedCount > 0 || result.wrappedCount > 0 || result.normalizedCount > 0 || result.removedEditCount > 0) {
     result.title = "Abbreviation updates ready";
     result.summary = buildResultSummary(result);
   } else if (result.ambiguousTerms.length > 0) {
@@ -237,6 +254,7 @@ function processAbbreviationText(text, abbreviations) {
 
 function applyDefinitionRule(text, term, definition, result) {
   const occurrenceRegex = buildOccurrenceRegex(term);
+  const canonicalTerm = formatAbbreviationTerm(term);
   let firstOccurrenceHandled = false;
 
   return text.replace(occurrenceRegex, (match, prefix, wrappedTerm, rawTerm, offset, fullText) => {
@@ -246,7 +264,11 @@ function applyDefinitionRule(text, term, definition, result) {
 
     if (isAlreadyExpandedOccurrence(fullText, occurrenceStart, definition)) {
       firstOccurrenceHandled = true;
-      return match;
+      if (matchedTerm !== canonicalTerm) {
+        result.changed = true;
+        result.normalizedCount += 1;
+      }
+      return `${prefix}(${canonicalTerm})`;
     }
 
     if (!firstOccurrenceHandled) {
@@ -254,17 +276,21 @@ function applyDefinitionRule(text, term, definition, result) {
       result.changed = true;
       result.expandedCount += 1;
       result.expandedTerms.push({ term, definition });
-      return `${prefix}${definition} (${matchedTerm})`;
+      return `${prefix}${definition} (${canonicalTerm})`;
     }
 
     if (alreadyWrapped) {
-      return match;
+      if (matchedTerm !== canonicalTerm) {
+        result.changed = true;
+        result.normalizedCount += 1;
+      }
+      return `${prefix}(${canonicalTerm})`;
     }
 
     result.changed = true;
     result.wrappedCount += 1;
     incrementTermCount(result.wrappedTerms, term);
-    return `${prefix}(${matchedTerm})`;
+    return `${prefix}(${canonicalTerm})`;
   });
 }
 
@@ -305,25 +331,25 @@ function hasTermOccurrence(text, term) {
 }
 
 function findExistingExpandedDefinition(text, term, definitions) {
-  const escapedTerm = escapeRegExp(term);
+  const termPattern = buildFlexibleTermPattern(term);
 
   return (
     definitions.find((definition) => {
       const escapedDefinition = escapeRegExp(definition);
-      const expandedRegex = new RegExp(`${escapedDefinition}\\s*\\(${escapedTerm}\\)`);
+      const expandedRegex = new RegExp(`${escapedDefinition}\\s*\\(${termPattern}\\)`, "i");
       return expandedRegex.test(text);
     }) || null
   );
 }
 
 function buildOccurrenceRegex(term) {
-  const escapedTerm = escapeRegExp(term);
-  return new RegExp(`(^|[^A-Za-z0-9])(?:\\((${escapedTerm})\\)|(${escapedTerm}))(?=[^A-Za-z0-9]|$)`, "g");
+  const termPattern = buildFlexibleTermPattern(term);
+  return new RegExp(`(^|[^A-Za-z0-9])(?:\\((${termPattern})\\)|(${termPattern}))(?=[^A-Za-z0-9]|$)`, "gi");
 }
 
 function isAlreadyExpandedOccurrence(text, occurrenceStart, definition) {
-  const textBeforeOccurrence = text.slice(0, occurrenceStart).replace(/\s+$/, "");
-  return textBeforeOccurrence.endsWith(definition);
+  const textBeforeOccurrence = normalizeComparableText(text.slice(0, occurrenceStart));
+  return textBeforeOccurrence.endsWith(normalizeComparableText(definition));
 }
 
 function incrementTermCount(termMap, term) {
@@ -341,6 +367,18 @@ function buildResultSummary(result) {
 
   if (result.wrappedCount > 0) {
     parts.push(`${result.wrappedCount} repeat${result.wrappedCount === 1 ? "" : "s"} wrapped`);
+  }
+
+  if (result.normalizedCount > 0) {
+    parts.push(
+      `${result.normalizedCount} abbreviation${result.normalizedCount === 1 ? "" : "s"} standardized`
+    );
+  }
+
+  if (result.removedEditCount > 0) {
+    parts.push(
+      `${result.removedEditCount} stray edit word${result.removedEditCount === 1 ? "" : "s"} removed`
+    );
   }
 
   if (result.ambiguousTerms.length > 0) {
@@ -549,6 +587,42 @@ function hideAbbreviationStatus() {
 
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function formatAbbreviationTerm(term) {
+  return term.trim().toUpperCase();
+}
+
+function buildFlexibleTermPattern(term) {
+  const trimmedTerm = term.trim();
+
+  if (!trimmedTerm) {
+    return "";
+  }
+
+  if (!/[\/&-]/.test(trimmedTerm)) {
+    return escapeRegExp(trimmedTerm);
+  }
+
+  const compactTerm = trimmedTerm.replace(/[^A-Za-z0-9]/g, "");
+
+  if (compactTerm.length < 2) {
+    return escapeRegExp(trimmedTerm);
+  }
+
+  return compactTerm
+    .split("")
+    .map((character) => escapeRegExp(character))
+    .join("(?:\\s*(?:[\\/&-])\\s*)?");
+}
+
+function normalizeComparableText(value) {
+  return value.trim().replace(/\s+/g, " ").toLowerCase();
+}
+
+function countStandaloneWordOccurrences(text, word) {
+  const matches = text.match(new RegExp(`\\b${escapeRegExp(word)}\\b`, "gi"));
+  return matches ? matches.length : 0;
 }
 
 function escapeHtml(value) {

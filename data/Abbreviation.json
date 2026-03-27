@@ -45,17 +45,11 @@
     "Term": "CMS",
     "Definition": "Centers for Medicare & Medicaid Services",
     "Definition 2": "Claims Management System",
-    "Definition 3": "Centers for Medicare & Medicaid Services"
+    "Definition 3": ""
   },
   {
     "Term": "COPPS",
     "Definition": "Commercial  Outpatient Prospective Payment System",
-    "Definition 2": "",
-    "Definition 3": ""
-  },
-  {
-    "Term": "CPT",
-    "Definition": "Current Procedural Terminology\n",
     "Definition 2": "",
     "Definition 3": ""
   },
@@ -96,26 +90,38 @@
     "Definition 3": ""
   },
   {
-    "Term": "HIPAA",
-    "Definition": "Health Insurance Portability & Accountability Act",
-    "Definition 2": "",
-    "Definition 3": ""
-  },
-  {
     "Term": "HMO",
     "Definition": "Health Maintenance Organization",
     "Definition 2": "",
     "Definition 3": ""
   },
   {
-    "Term": "HCPC",
-    "Definition": "Health Care Procedure Code",
+    "Term": "PHI",
+    "Definition": "Protected Health Information",
     "Definition 2": "",
     "Definition 3": ""
   },
   {
-    "Term": "PHI",
-    "Definition": "Protected Health Information",
+    "Term": "NCCI",
+    "Definition": "National Correct Coding Initiative",
+    "Definition 2": "",
+    "Definition 3": ""
+  },
+  {
+    "Term": "MUE",
+    "Definition": "Medically Unlikely Events",
+    "Definition 2": "",
+    "Definition 3": ""
+  },
+  {
+    "Term": "AMA",
+    "Definition": "American Medical Association",
+    "Definition 2": "",
+    "Definition 3": ""
+  },
+  {
+    "Term": "CRP",
+    "Definition": "Custom Reporting Package",
     "Definition 2": "",
     "Definition 3": ""
   }
