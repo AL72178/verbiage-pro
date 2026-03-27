@@ -348,7 +348,7 @@
     "Scenario": "Sweep Decision",
     "Short Summary": "Sweep Adjustment Decision",
     "Decision Code": "SWEEPD",
-    "Verbiage": "The claim was adjusted under Sweep Adjustment. The services rendered have been processed according to your provider contract. You will receive a new Explanation of Payment and any appropriate payment within two weeks."
+    "Verbiage": "The claim has already been adjusted for payment by the dedicated team. You will receive a new Explanation of Payment and any appropriate payment within two weeks."
   },
   {
     "Coded By": "User",
