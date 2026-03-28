@@ -691,5 +691,32 @@
     "Short Summary": "Provider submit to other insurance incorrectly",
     "Decision Code": "TFLOTHR",
     "Verbiage": "The documentation received is not sufficient to wave timely filing. The claim was originally send to other payor and as per the attached documentation; provider received the Explanation of benefits on (*rejected/accepted_date_asper_mlh). Provider need to re-submit the claim to from within the Anthem within (*tfl_limit) according to the providers timely filing contract limit. Please note that we received the claim on (*our_claim_rec_date), which is outside the allowed time period. If you have additional evidence that the claim in question was filed in a timely manner, please provide it to us so that we may consider this matter further."
+  },
+  {
+    "Coded By": "User",
+    "Inquiry": "Inquiry",
+    "Secondary Category": "IQT - NonPar",
+    "Scenario": "IQT - related to NonPar",
+    "Short Summary": "When no DOR received",
+    "Decision Code": "DORNO",
+    "Verbiage": "Our records show that the provider is listed as non-participating, therefore the claim is not eligible for dispute. In order for us to complete the review of your dispute, a signed designation of authorized representative form is required and must be submitted in writing."
+  },
+    {
+    "Coded By": "User",
+    "Inquiry": "Inquiry",
+    "Secondary Category": "IQT - NonPar",
+    "Scenario": "IQT - related to NonPar",
+    "Short Summary": "When DOR received without signed",
+    "Decision Code": "DORNSGN",
+    "Verbiage": "The submitted Designation of Representative (DOR) form was received; however, it is not signed. Therefore, we are unable to proceed with the review at this time. In order for us to complete the review of your dispute, a signed designation of authorized representative form is required and must be submitted in writing."
+  },
+      {
+    "Coded By": "User",
+    "Inquiry": "Inquiry",
+    "Secondary Category": "IQT - NonPar",
+    "Scenario": "IQT - related to NonPar",
+    "Short Summary": "When DOR is received",
+    "Decision Code": "DORREC",
+    "Verbiage": "The claim in question does not qualify as a provider dispute. The request has been forwarded to the members’ appeal department for review."
   }
 ]
