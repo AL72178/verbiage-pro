@@ -546,7 +546,7 @@
     "Scenario": "CERIS Uphold Case",
     "Short Summary": "CERIS Upholding the previous decision on file",
     "Decision Code": "CERIS",
-    "Verbiage": "The dispute in question was upheld, as the amount of $(amount) was disallowed as per CERIS re-review that was made on (date). Since, we don’t see discrepancy in the payment and disallowed charges that was made earlier, we are upholding the amount paid in our previous decision/record. Please find the attached document no. (*f_docnum) that was re-reviewed and sent by CERIS."
+    "Verbiage": "The dispute in question was upheld, as the amount of $(*amount) was disallowed as per CERIS re-review that was made on (*date). Since, we don’t see discrepancy in the payment and disallowed charges that was made earlier, we are upholding the amount paid in our previous decision/record. Please find the attached document no. (*f_docnum) that was re-reviewed and sent by CERIS."
   },
   {
     "Coded By": "User",
