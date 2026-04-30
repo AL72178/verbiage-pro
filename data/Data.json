@@ -519,7 +519,7 @@
     "Scenario": "Requesting Resubmission",
     "Short Summary": "Requesting Void Claim",
     "Decision Code": "REVOID",
-    "Verbiage": "Please be advised that in order to recoup the payment of $(*amount) from the claim, we require void claim to further process this claim for recoupment. Kindly  Re-submit the claim as a void claim according to the provider manual guidelines."
+    "Verbiage": "Please be advised that in order to recoup the payment of $(*amount) from the claim, we require void claim to further process this claim for recoupment. Kindly Re-submit the claim as a void claim according to the provider manual guidelines."
   },
   {
     "Coded By": "User",
